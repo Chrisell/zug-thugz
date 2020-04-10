@@ -1,0 +1,874 @@
+[
+  {
+    "name": "Leggings of the Festering Swarm",
+    "boss": "Battleguard Sartura",
+    "slot": "Legs",
+    "type": "Cloth",
+    "dropchance": 0.125,
+    "location": "AQ40"
+  },
+  {
+    "name": "Recomposed Boots",
+    "boss": "Battleguard Sartura",
+    "slot": "Feet",
+    "type": "Cloth",
+    "dropchance": 0.0913,
+    "location": "AQ40"
+  },
+  {
+    "name": "Robes of the Battleguard",
+    "boss": "Battleguard Sartura",
+    "slot": "Chest",
+    "type": "Cloth",
+    "dropchance": 0.119,
+    "location": "AQ40"
+  },
+  {
+    "name": "Silithid Claw",
+    "boss": "Battleguard Sartura",
+    "slot": "Main Hand",
+    "type": "FistWeapon",
+    "dropchance": 0.0681,
+    "location": "AQ40"
+  },
+  {
+    "name": "Creeping Vine Helm",
+    "boss": "Battleguard Sartura",
+    "slot": "Head",
+    "type": "Leather",
+    "dropchance": 0.1209,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gloves of Enforcement",
+    "boss": "Battleguard Sartura",
+    "slot": "Hands",
+    "type": "Leather",
+    "dropchance": 0.1165,
+    "location": "AQ40"
+  },
+  {
+    "name": "Thick Qirajihide Belt",
+    "boss": "Battleguard Sartura",
+    "slot": "Waist",
+    "type": "Leather",
+    "dropchance": 0.1272,
+    "location": "AQ40"
+  },
+  {
+    "name": "Scaled Leggings of Qiraji Fury",
+    "boss": "Battleguard Sartura",
+    "slot": "Legs",
+    "type": "Mail",
+    "dropchance": 0.0362,
+    "location": "AQ40"
+  },
+  {
+    "name": "Badge of the Swarmguard",
+    "boss": "Battleguard Sartura",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.1244,
+    "location": "AQ40"
+  },
+  {
+    "name": "Necklace of Purity",
+    "boss": "Battleguard Sartura",
+    "slot": "Neck",
+    "type": "Misc",
+    "dropchance": 0.1323,
+    "location": "AQ40"
+  },
+  {
+    "name": "Sartura's Might",
+    "boss": "Battleguard Sartura",
+    "slot": "Off-Hand",
+    "type": "Misc",
+    "dropchance": 0.0615,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gauntlets of Steadfast Determination",
+    "boss": "Battleguard Sartura",
+    "slot": "Hands",
+    "type": "Plate",
+    "dropchance": 0.1171,
+    "location": "AQ40"
+  },
+  {
+    "name": "Legplates of Blazing Light",
+    "boss": "Battleguard Sartura",
+    "slot": "Legs",
+    "type": "Plate",
+    "dropchance": 0.0784,
+    "location": "AQ40"
+  },
+  {
+    "name": "Dark Edge of Insanity",
+    "boss": "C'Thun",
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "dropchance": 0.0531,
+    "location": "AQ40"
+  },
+  {
+    "name": "Cloak of Clarity",
+    "boss": "C'Thun",
+    "slot": "Back",
+    "type": "Cloth",
+    "dropchance": 0.119,
+    "location": "AQ40"
+  },
+  {
+    "name": "Cloak of the Devoured",
+    "boss": "C'Thun",
+    "slot": "Back",
+    "type": "Cloth",
+    "dropchance": 0.1644,
+    "location": "AQ40"
+  },
+  {
+    "name": "Dark Storm Gauntlets",
+    "boss": "C'Thun",
+    "slot": "Hands",
+    "type": "Cloth",
+    "dropchance": 0.1441,
+    "location": "AQ40"
+  },
+  {
+    "name": "Eyestalk Waist Cord",
+    "boss": "C'Thun",
+    "slot": "Waist",
+    "type": "Cloth",
+    "dropchance": 0.0948,
+    "location": "AQ40"
+  },
+  {
+    "name": "Grasp of the Old God",
+    "boss": "C'Thun",
+    "slot": "Waist",
+    "type": "Cloth",
+    "dropchance": 0.1621,
+    "location": "AQ40"
+  },
+  {
+    "name": "Death's Sting",
+    "boss": "C'Thun",
+    "slot": "One-Hand",
+    "type": "Dagger",
+    "dropchance": 0.0666,
+    "location": "AQ40"
+  },
+  {
+    "name": "Belt of Never-ending Agony",
+    "boss": "C'Thun",
+    "slot": "Waist",
+    "type": "Leather",
+    "dropchance": 0.1098,
+    "location": "AQ40"
+  },
+  {
+    "name": "Scepter of the False Prophet",
+    "boss": "C'Thun",
+    "slot": "Main Hand",
+    "type": "Mace",
+    "dropchance": 0.0462,
+    "location": "AQ40"
+  },
+  {
+    "name": "Mark of C'Thun",
+    "boss": "C'Thun",
+    "slot": "Neck",
+    "type": "Misc",
+    "dropchance": 0.106,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ring of the Godslayer",
+    "boss": "C'Thun",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.1185,
+    "location": "AQ40"
+  },
+  {
+    "name": "Vanquished Tentacle of C'Thun",
+    "boss": "C'Thun",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.1717,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gauntlets of Annihilation",
+    "boss": "C'Thun",
+    "slot": "Hands",
+    "type": "Plate",
+    "dropchance": 0.126,
+    "location": "AQ40"
+  },
+  {
+    "name": "Eye of C'Thun",
+    "boss": "C'Thun",
+    "slot": "Consumable",
+    "type": "Quest",
+    "dropchance": 0.848,
+    "location": "AQ40"
+  },
+  {
+    "name": "Boots of Epiphany",
+    "boss": "Emperor Vek'lor",
+    "slot": "Feet",
+    "type": "Cloth",
+    "dropchance": 0.1467,
+    "location": "AQ40"
+  },
+  {
+    "name": "Qiraji Execution Bracers",
+    "boss": "Emperor Vek'lor",
+    "slot": "Wrist",
+    "type": "Leather",
+    "dropchance": 0.1469,
+    "location": "AQ40"
+  },
+  {
+    "name": "Vek'lor's Gloves of Devastation",
+    "boss": "Emperor Vek'lor",
+    "slot": "Hands",
+    "type": "Mail",
+    "dropchance": 0.1413,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ring of Emperor Vek'lor",
+    "boss": "Emperor Vek'lor",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.1429,
+    "location": "AQ40"
+  },
+  {
+    "name": "Royal Scepter of Vek'lor",
+    "boss": "Emperor Vek'lor",
+    "slot": "Off-Hand",
+    "type": "Misc",
+    "dropchance": 0.0718,
+    "location": "AQ40"
+  },
+  {
+    "name": "Royal Qiraji Belt",
+    "boss": "Emperor Vek'lor",
+    "slot": "Waist",
+    "type": "Plate",
+    "dropchance": 0.1055,
+    "location": "AQ40"
+  },
+  {
+    "name": "Bracelets of Royal Redemption",
+    "boss": "Emperor Vek'nilash",
+    "slot": "Wrist",
+    "type": "Cloth",
+    "dropchance": 0.1192,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gloves of the Hidden Temple",
+    "boss": "Emperor Vek'nilash",
+    "slot": "Hands",
+    "type": "Leather",
+    "dropchance": 0.1521,
+    "location": "AQ40"
+  },
+  {
+    "name": "Regenerating Belt of Vek'nilash",
+    "boss": "Emperor Vek'nilash",
+    "slot": "Waist",
+    "type": "Leather",
+    "dropchance": 0.1244,
+    "location": "AQ40"
+  },
+  {
+    "name": "Grasp of the Fallen Emperor",
+    "boss": "Emperor Vek'nilash",
+    "slot": "Waist",
+    "type": "Mail",
+    "dropchance": 0.0327,
+    "location": "AQ40"
+  },
+  {
+    "name": "Amulet of Vek'nilash",
+    "boss": "Emperor Vek'nilash",
+    "slot": "Neck",
+    "type": "Misc",
+    "dropchance": 0.1397,
+    "location": "AQ40"
+  },
+  {
+    "name": "Belt of the Fallen Emperor",
+    "boss": "Emperor Vek'nilash",
+    "slot": "Waist",
+    "type": "Plate",
+    "dropchance": 0.107,
+    "location": "AQ40"
+  },
+  {
+    "name": "Kalimdor's Revenge",
+    "boss": "Emperor Vek'nilash",
+    "slot": "Two-Hand",
+    "type": "Sword",
+    "dropchance": 0.0838,
+    "location": "AQ40"
+  },
+  {
+    "name": "Cloak of Untold Secrets",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Back",
+    "type": "Cloth",
+    "dropchance": 0.1143,
+    "location": "AQ40"
+  },
+  {
+    "name": "Robes of the Guardian Saint",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Chest",
+    "type": "Cloth",
+    "dropchance": 0.1178,
+    "location": "AQ40"
+  },
+  {
+    "name": "Hive Tunneler's Boots",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Feet",
+    "type": "Leather",
+    "dropchance": 0.1357,
+    "location": "AQ40"
+  },
+  {
+    "name": "Mantle of Wicked Revenge",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Shoulder",
+    "type": "Leather",
+    "dropchance": 0.1236,
+    "location": "AQ40"
+  },
+  {
+    "name": "Libram of Grace",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Relic",
+    "type": "Libram",
+    "dropchance": 0.0515,
+    "location": "AQ40"
+  },
+  {
+    "name": "Scaled Sand Reaver Leggings",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Legs",
+    "type": "Mail",
+    "dropchance": 0.1364,
+    "location": "AQ40"
+  },
+  {
+    "name": "Barbed Choker",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Neck",
+    "type": "Misc",
+    "dropchance": 0.1269,
+    "location": "AQ40"
+  },
+  {
+    "name": "Fetish of the Sand Reaver",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.1353,
+    "location": "AQ40"
+  },
+  {
+    "name": "Pauldrons of the Unrelenting",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Shoulder",
+    "type": "Plate",
+    "dropchance": 0.1306,
+    "location": "AQ40"
+  },
+  {
+    "name": "Silithid Carapace Chestguard",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Chest",
+    "type": "Plate",
+    "dropchance": 0.1083,
+    "location": "AQ40"
+  },
+  {
+    "name": "Barb of the Sand Reaver",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Two-Hand",
+    "type": "Polearm",
+    "dropchance": 0.0663,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ancient Qiraji Ripper",
+    "boss": "Fankriss the Unyielding",
+    "slot": "One-Hand",
+    "type": "Sword",
+    "dropchance": 0.0629,
+    "location": "AQ40"
+  },
+  {
+    "name": "Totem of Life",
+    "boss": "Fankriss the Unyielding",
+    "slot": "Relic",
+    "type": "Totem",
+    "dropchance": 0.0201,
+    "location": "AQ40"
+  },
+  {
+    "name": "Vest of Swift Execution",
+    "boss": "Lord Kri",
+    "slot": "Chest",
+    "type": "Leather",
+    "dropchance": 0.1877,
+    "location": "AQ40"
+  },
+  {
+    "name": "Petrified Scarab",
+    "boss": "Lord Kri",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.1639,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ring of the Devoured",
+    "boss": "Lord Kri",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.1583,
+    "location": "AQ40"
+  },
+  {
+    "name": "Wand of Qiraji Nobility",
+    "boss": "Lord Kri",
+    "slot": "Ranged",
+    "type": "Wand",
+    "dropchance": 0.1594,
+    "location": "AQ40"
+  },
+  {
+    "name": "Burrower Bracers",
+    "boss": "Ouro",
+    "slot": "Wrist",
+    "type": "Cloth",
+    "dropchance": 0.2659,
+    "location": "AQ40"
+  },
+  {
+    "name": "Don Rigoberto's Lost Hat",
+    "boss": "Ouro",
+    "slot": "Head",
+    "type": "Cloth",
+    "dropchance": 0.2893,
+    "location": "AQ40"
+  },
+  {
+    "name": "Larvae of the Great Worm",
+    "boss": "Ouro",
+    "slot": "Ranged",
+    "type": "Gun",
+    "dropchance": 0.0707,
+    "location": "AQ40"
+  },
+  {
+    "name": "Jom Gabbar",
+    "boss": "Ouro",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.0414,
+    "location": "AQ40"
+  },
+  {
+    "name": "The Burrower's Shell",
+    "boss": "Ouro",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.0708,
+    "location": "AQ40"
+  },
+  {
+    "name": "Wormscale Blocker",
+    "boss": "Ouro",
+    "slot": "Off-Hand",
+    "type": "Shield",
+    "dropchance": 0.1913,
+    "location": "AQ40"
+  },
+  {
+    "name": "Huhuran's Stinger",
+    "boss": "Princess Huhuran",
+    "slot": "Ranged",
+    "type": "Bow",
+    "dropchance": 0.0616,
+    "location": "AQ40"
+  },
+  {
+    "name": "Cloak of the Golden Hive",
+    "boss": "Princess Huhuran",
+    "slot": "Back",
+    "type": "Cloth",
+    "dropchance": 0.1087,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gloves of the Messiah",
+    "boss": "Princess Huhuran",
+    "slot": "Hands",
+    "type": "Cloth",
+    "dropchance": 0.1198,
+    "location": "AQ40"
+  },
+  {
+    "name": "Wasphide Gauntlets",
+    "boss": "Princess Huhuran",
+    "slot": "Hands",
+    "type": "Leather",
+    "dropchance": 0.1141,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ring of the Martyr",
+    "boss": "Princess Huhuran",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.1228,
+    "location": "AQ40"
+  },
+  {
+    "name": "Hive Defiler Wristguards",
+    "boss": "Princess Huhuran",
+    "slot": "Wrist",
+    "type": "Plate",
+    "dropchance": 0.1106,
+    "location": "AQ40"
+  },
+  {
+    "name": "Mantle of Phrenic Power",
+    "boss": "Princess Yauj",
+    "slot": "Shoulder",
+    "type": "Cloth",
+    "dropchance": 0.1994,
+    "location": "AQ40"
+  },
+  {
+    "name": "Bile-Covered Gauntlets",
+    "boss": "Princess Yauj",
+    "slot": "Hands",
+    "type": "Leather",
+    "dropchance": 0.2012,
+    "location": "AQ40"
+  },
+  {
+    "name": "Mantle of the Desert's Fury",
+    "boss": "Princess Yauj",
+    "slot": "Shoulder",
+    "type": "Mail",
+    "dropchance": 0.0531,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ukko's Ring of Darkness",
+    "boss": "Princess Yauj",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.2042,
+    "location": "AQ40"
+  },
+  {
+    "name": "Mantle of the Desert Crusade",
+    "boss": "Princess Yauj",
+    "slot": "Shoulder",
+    "type": "Plate",
+    "dropchance": 0.0737,
+    "location": "AQ40"
+  },
+  {
+    "name": "Neretzek",
+    "boss": "Random Mobs",
+    "slot": "Two-Hand",
+    "type": "Axe",
+    "dropchance": 0.0018,
+    "location": "AQ40"
+  },
+  {
+    "name": "Garb of Royal Ascension",
+    "boss": "Random Mobs",
+    "slot": "Chest",
+    "type": "Cloth",
+    "dropchance": 0.0019,
+    "location": "AQ40"
+  },
+  {
+    "name": "Anubisath Warhammer",
+    "boss": "Random Mobs",
+    "slot": "One-Hand",
+    "type": "Mace",
+    "dropchance": 0.0021,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ritssyn's Ring of Chaos",
+    "boss": "Random Mobs",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.0019,
+    "location": "AQ40"
+  },
+  {
+    "name": "Shard of the Fallen Star",
+    "boss": "Random Mobs",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.0053,
+    "location": "AQ40"
+  },
+  {
+    "name": "Cloak of Concentrated Hatred",
+    "boss": "The Prophet Skeram",
+    "slot": "Back",
+    "type": "Cloth",
+    "dropchance": 0.1094,
+    "location": "AQ40"
+  },
+  {
+    "name": "Beetle Scaled Wristguards",
+    "boss": "The Prophet Skeram",
+    "slot": "Wrist",
+    "type": "Leather",
+    "dropchance": 0.1269,
+    "location": "AQ40"
+  },
+  {
+    "name": "Leggings of Immersion",
+    "boss": "The Prophet Skeram",
+    "slot": "Legs",
+    "type": "Leather",
+    "dropchance": 0.1074,
+    "location": "AQ40"
+  },
+  {
+    "name": "Hammer of Ji'zhi",
+    "boss": "The Prophet Skeram",
+    "slot": "Two-Hand",
+    "type": "Mace",
+    "dropchance": 0.0653,
+    "location": "AQ40"
+  },
+  {
+    "name": "Barrage Shoulders",
+    "boss": "The Prophet Skeram",
+    "slot": "Shoulder",
+    "type": "Mail",
+    "dropchance": 0.1139,
+    "location": "AQ40"
+  },
+  {
+    "name": "Boots of the Fallen Prophet",
+    "boss": "The Prophet Skeram",
+    "slot": "Feet",
+    "type": "Mail",
+    "dropchance": 0.0312,
+    "location": "AQ40"
+  },
+  {
+    "name": "Amulet of Foul Warding",
+    "boss": "The Prophet Skeram",
+    "slot": "Neck",
+    "type": "Misc",
+    "dropchance": 0.117,
+    "location": "AQ40"
+  },
+  {
+    "name": "Pendant of the Qiraji Guardian",
+    "boss": "The Prophet Skeram",
+    "slot": "Neck",
+    "type": "Misc",
+    "dropchance": 0.1066,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ring of Swarming Thought",
+    "boss": "The Prophet Skeram",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.1249,
+    "location": "AQ40"
+  },
+  {
+    "name": "Boots of the Redeemed Prophecy",
+    "boss": "The Prophet Skeram",
+    "slot": "Feet",
+    "type": "Plate",
+    "dropchance": 0.0696,
+    "location": "AQ40"
+  },
+  {
+    "name": "Boots of the Unwavering Will",
+    "boss": "The Prophet Skeram",
+    "slot": "Feet",
+    "type": "Plate",
+    "dropchance": 0.1208,
+    "location": "AQ40"
+  },
+  {
+    "name": "Breastplate of Annihilation",
+    "boss": "The Prophet Skeram",
+    "slot": "Chest",
+    "type": "Plate",
+    "dropchance": 0.1065,
+    "location": "AQ40"
+  },
+  {
+    "name": "Staff of the Qiraji Prophets",
+    "boss": "The Prophet Skeram",
+    "slot": "Two-Hand",
+    "type": "Staff",
+    "dropchance": 0.0591,
+    "location": "AQ40"
+  },
+  {
+    "name": "Cape of the Trinity",
+    "boss": "Triumvirate",
+    "slot": "Back",
+    "type": "Cloth",
+    "dropchance": 0.1248,
+    "location": "AQ40"
+  },
+  {
+    "name": "Robes of the Triumvirate",
+    "boss": "Triumvirate",
+    "slot": "Chest",
+    "type": "Cloth",
+    "dropchance": 0.1394,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ternary Mantle",
+    "boss": "Triumvirate",
+    "slot": "Shoulder",
+    "type": "Cloth",
+    "dropchance": 0.1204,
+    "location": "AQ40"
+  },
+  {
+    "name": "Guise of the Devourer",
+    "boss": "Triumvirate",
+    "slot": "Head",
+    "type": "Leather",
+    "dropchance": 0.1142,
+    "location": "AQ40"
+  },
+  {
+    "name": "Angelista's Touch",
+    "boss": "Triumvirate",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.1304,
+    "location": "AQ40"
+  },
+  {
+    "name": "Triad Girdle",
+    "boss": "Triumvirate",
+    "slot": "Waist",
+    "type": "Plate",
+    "dropchance": 0.1171,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gloves of Ebru",
+    "boss": "Vem",
+    "slot": "Hands",
+    "type": "Leather",
+    "dropchance": 0.1594,
+    "location": "AQ40"
+  },
+  {
+    "name": "Angelista's Charm",
+    "boss": "Vem",
+    "slot": "Neck",
+    "type": "Misc",
+    "dropchance": 0.1419,
+    "location": "AQ40"
+  },
+  {
+    "name": "Boots of the Fallen Hero",
+    "boss": "Vem",
+    "slot": "Feet",
+    "type": "Plate",
+    "dropchance": 0.1628,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ooze-ridden Gauntlets",
+    "boss": "Vem",
+    "slot": "Hands",
+    "type": "Plate",
+    "dropchance": 0.1415,
+    "location": "AQ40"
+  },
+  {
+    "name": "Idol of Health",
+    "boss": "Viscidus",
+    "slot": "Relic",
+    "type": "Idol",
+    "dropchance": 0.1673,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gauntlets of Kalimdor",
+    "boss": "Viscidus",
+    "slot": "Hands",
+    "type": "Mail",
+    "dropchance": 0.031,
+    "location": "AQ40"
+  },
+  {
+    "name": "Slime-coated Leggings",
+    "boss": "Viscidus",
+    "slot": "Legs",
+    "type": "Mail",
+    "dropchance": 0.1104,
+    "location": "AQ40"
+  },
+  {
+    "name": "Ring of the Qiraji Fury",
+    "boss": "Viscidus",
+    "slot": "Finger",
+    "type": "Misc",
+    "dropchance": 0.044,
+    "location": "AQ40"
+  },
+  {
+    "name": "Scarab Brooch",
+    "boss": "Viscidus",
+    "slot": "Trinket",
+    "type": "Misc",
+    "dropchance": 0.1806,
+    "location": "AQ40"
+  },
+  {
+    "name": "Gauntlets of the Righteous Champion",
+    "boss": "Viscidus",
+    "slot": "Hands",
+    "type": "Plate",
+    "dropchance": 0.0424,
+    "location": "AQ40"
+  },
+  {
+    "name": "Sharpened Silithid Femur",
+    "boss": "Viscidus",
+    "slot": "Main Hand",
+    "type": "Sword",
+    "dropchance": 0.1083,
+    "location": "AQ40"
+  }
+]

@@ -32,33 +32,38 @@ class Page extends React.Component {
     render() {
         const columns = [
             {
-                dataField: 'Location',
+                dataField: 'location',
                 text: 'Location',
             },
             {
-                dataField: 'Name',
+                dataField: 'name',
                 text: 'Item Name ',
                 filter: textFilter()
             }, 
             {
-                dataField: 'Boss',
+                dataField: 'boss',
                 text: 'Boss ',
                 filter: textFilter()
             }, 
             {
-                dataField: 'Slot',
+                dataField: 'slot',
                 text: 'Slot ',
                 filter: textFilter(),
                 sort: true
             }, 
             {
-                dataField: 'Type',
-                text: 'Type ',
+                dataField: 'armor_type',
+                text: 'Armor Type',
                 filter: textFilter()
             },
             {
-                dataField: 'DropChance',
-                text: 'Drop Chance',
+                dataField: 'ilvl',
+                text: 'Item Level',
+                sort: true
+            },
+            {
+                dataField: 'category',
+                text: 'Category',
                 sort: true
             }
         ];

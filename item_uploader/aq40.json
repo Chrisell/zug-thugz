@@ -1,0 +1,1019 @@
+[
+  {
+    "name": "Amulet of Foul Warding",
+    "ilvl": 73,
+    "slot": "Neck",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Amulet"
+  },
+  {
+    "name": "Amulet of Vek'nilash",
+    "ilvl": 81,
+    "slot": "Neck",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Amulet"
+  },
+  {
+    "name": "Ancient Qiraji Ripper",
+    "ilvl": 77,
+    "slot": "One-Hand",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "One-Handed Sword"
+  },
+  {
+    "name": "Angelista's Charm",
+    "ilvl": 75,
+    "slot": "Neck",
+    "boss": "Vem",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Amulet"
+  },
+  {
+    "name": "Angelista's Touch",
+    "ilvl": 75,
+    "slot": "Finger",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Badge of the Swarmguard",
+    "ilvl": 76,
+    "slot": "Trinket",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Trinket"
+  },
+  {
+    "name": "Barb of the Sand Reaver",
+    "ilvl": 77,
+    "slot": "Two-Hand",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Polearm"
+  },
+  {
+    "name": "Barbed Choker",
+    "ilvl": 77,
+    "slot": "Neck",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Amulet"
+  },
+  {
+    "name": "Barrage Shoulders",
+    "ilvl": 73,
+    "slot": "Shoulder",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Beetle Scaled Wristguards",
+    "ilvl": 73,
+    "slot": "Wrist",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Belt of Never-ending Agony",
+    "ilvl": 88,
+    "slot": "Waist",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Belt of the Fallen Emperor",
+    "ilvl": 81,
+    "slot": "Waist",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Bile-Covered Gauntlets",
+    "ilvl": 78,
+    "slot": "Hands",
+    "boss": "Princess Yauj",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Boots of Epiphany",
+    "ilvl": 81,
+    "slot": "Feet",
+    "boss": "Emperor Vek'lor",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Boots of the Fallen Hero",
+    "ilvl": 75,
+    "slot": "Feet",
+    "boss": "Vem",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Boots of the Fallen Prophet",
+    "ilvl": 73,
+    "slot": "Feet",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Boots of the Redeemed Prophecy",
+    "ilvl": 73,
+    "slot": "Feet",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Boots of the Unwavering Will",
+    "ilvl": 73,
+    "slot": "Feet",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Bracelets of Royal Redemption",
+    "ilvl": 81,
+    "slot": "Wrist",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Breastplate of Annihilation",
+    "ilvl": 73,
+    "slot": "Chest",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Burrower Bracers",
+    "ilvl": 81,
+    "slot": "Wrist",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Cape of the Trinity",
+    "ilvl": 75,
+    "slot": "Back",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Cloak"
+  },
+  {
+    "name": "Carapace of the Old God",
+    "ilvl": 88,
+    "slot": "Chest",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "Varies",
+    "category": "Armor"
+  },
+  {
+    "name": "Cloak of Clarity",
+    "ilvl": 88,
+    "slot": "Back",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Cloak"
+  },
+  {
+    "name": "Cloak of Concentrated Hatred",
+    "ilvl": 73,
+    "slot": "Back",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Cloak"
+  },
+  {
+    "name": "Cloak of the Devoured",
+    "ilvl": 88,
+    "slot": "Back",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Cloak"
+  },
+  {
+    "name": "Cloak of the Golden Hive",
+    "ilvl": 78,
+    "slot": "Back",
+    "boss": "Princess Huhuran",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Cloak"
+  },
+  {
+    "name": "Cloak of Untold Secrets",
+    "ilvl": 77,
+    "slot": "Back",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Cloak"
+  },
+  {
+    "name": "Creeping Vine Helm",
+    "ilvl": 76,
+    "slot": "Head",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Dark Edge of Insanity",
+    "ilvl": 84,
+    "slot": "Two-Hand",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Two-Handed Axe"
+  },
+  {
+    "name": "Dark Storm Gauntlets",
+    "ilvl": 88,
+    "slot": "Hands",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Death's Sting",
+    "ilvl": 84,
+    "slot": "One-Hand",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Dagger"
+  },
+  {
+    "name": "Don Rigoberto's Lost Hat",
+    "ilvl": 81,
+    "slot": "Head",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Eye of C'Thun",
+    "ilvl": 88,
+    "slot": "Varies",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Varies"
+  },
+  {
+    "name": "Eyestalk Waist Cord",
+    "ilvl": 88,
+    "slot": "Waist",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Fetish of the Sand Reaver",
+    "ilvl": 77,
+    "slot": "Trinket",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Trinket"
+  },
+  {
+    "name": "Gauntlets of Annihilation",
+    "ilvl": 88,
+    "slot": "Hands",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Gauntlets of Kalimdor",
+    "ilvl": 78,
+    "slot": "Hands",
+    "boss": "Viscidus",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Gauntlets of Steadfast Determination",
+    "ilvl": 76,
+    "slot": "Hands",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Gloves of Ebru",
+    "ilvl": 75,
+    "slot": "Hands",
+    "boss": "Vem",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Gloves of Enforcement",
+    "ilvl": 76,
+    "slot": "Hands",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Gloves of the Hidden Temple",
+    "ilvl": 81,
+    "slot": "Hands",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Gloves of the Messiah",
+    "ilvl": 78,
+    "slot": "Hands",
+    "boss": "Princess Huhuran",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Grasp of the Fallen Emperor",
+    "ilvl": 81,
+    "slot": "Waist",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Grasp of the Old God",
+    "ilvl": 88,
+    "slot": "Waist",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Guise of the Devourer",
+    "ilvl": 75,
+    "slot": "Head",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Hammer of Ji'zhi",
+    "ilvl": 73,
+    "slot": "Two-Hand",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Two-Handed Mace"
+  },
+  {
+    "name": "Hive Defiler Wristguards",
+    "ilvl": 78,
+    "slot": "Wrist",
+    "boss": "Princess Huhuran",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Hive Tunneler's Boots",
+    "ilvl": 77,
+    "slot": "Feet",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Huhuran's Stinger",
+    "ilvl": 78,
+    "slot": "Ranged",
+    "boss": "Princess Huhuran",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Bow"
+  },
+  {
+    "name": "Husk of the Old God",
+    "ilvl": 88,
+    "slot": "Chest",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Armor"
+  },
+  {
+    "name": "Idol of Health",
+    "ilvl": 78,
+    "slot": "Relic",
+    "boss": "Viscidus",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Idol"
+  },
+  {
+    "name": "Imperial Qiraji Armaments",
+    "ilvl": 79,
+    "slot": "Weapon",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Varies"
+  },
+  {
+    "name": "Imperial Qiraji Regalia",
+    "ilvl": 79,
+    "slot": "Weapon",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Varies"
+  },
+  {
+    "name": "Jom Gabbar",
+    "ilvl": 81,
+    "slot": "Trinket",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Trinket"
+  },
+  {
+    "name": "Kalimdor's Revenge",
+    "ilvl": 81,
+    "slot": "Two-Hand",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Two-Handed Sword"
+  },
+  {
+    "name": "Larvae of the Great Worm",
+    "ilvl": 81,
+    "slot": "Ranged",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Gun"
+  },
+  {
+    "name": "Leggings of Immersion",
+    "ilvl": 73,
+    "slot": "Legs",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Leggings of the Festering Swarm",
+    "ilvl": 76,
+    "slot": "Legs",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Legplates of Blazing Light",
+    "ilvl": 76,
+    "slot": "Legs",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Libram of Grace",
+    "ilvl": 78,
+    "slot": "Relic",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Libram"
+  },
+  {
+    "name": "Mantle of Phrenic Power",
+    "ilvl": 76,
+    "slot": "Shoulder",
+    "boss": "Princess Yauj",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Mantle of the Desert Crusade",
+    "ilvl": 76,
+    "slot": "Shoulder",
+    "boss": "Princess Yauj",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Mantle of the Desert's Fury",
+    "ilvl": 76,
+    "slot": "Shoulder",
+    "boss": "Princess Yauj",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Mantle of Wicked Revenge",
+    "ilvl": 77,
+    "slot": "Shoulder",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Mark of C'Thun",
+    "ilvl": 88,
+    "slot": "Neck",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Amulet"
+  },
+  {
+    "name": "Necklace of Purity",
+    "ilvl": 76,
+    "slot": "Neck",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Amulet"
+  },
+  {
+    "name": "Ooze-ridden Gauntlets",
+    "ilvl": 75,
+    "slot": "Hands",
+    "boss": "Vem",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Ouro's Intact Hide",
+    "ilvl": 81,
+    "slot": "Legs",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "Varies",
+    "category": "Armor"
+  },
+  {
+    "name": "Pauldrons of the Unrelenting",
+    "ilvl": 77,
+    "slot": "Shoulder",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Pendant of the Qiraji Guardian",
+    "ilvl": 73,
+    "slot": "Neck",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Amulet"
+  },
+  {
+    "name": "Petrified Scarab",
+    "ilvl": 76,
+    "slot": "Trinket",
+    "boss": "Lord Kri",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Trinket"
+  },
+  {
+    "name": "Qiraji Bindings of Command",
+    "ilvl": 78,
+    "slot": "Varies",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "Varies",
+    "category": "Armor"
+  },
+  {
+    "name": "Qiraji Bindings of Dominance",
+    "ilvl": 78,
+    "slot": "Varies",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "Varies",
+    "category": "Armor"
+  },
+  {
+    "name": "Qiraji Execution Bracers",
+    "ilvl": 81,
+    "slot": "Wrist",
+    "boss": "Emperor Vek'lor",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Recomposed Boots",
+    "ilvl": 76,
+    "slot": "Feet",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Regenerating Belt of Vek'nilash",
+    "ilvl": 81,
+    "slot": "Waist",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Ring of Emperor Vek'lor",
+    "ilvl": 81,
+    "slot": "Finger",
+    "boss": "Emperor Vek'lor",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Ring of Swarming Thought",
+    "ilvl": 73,
+    "slot": "Finger",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Ring of the Devoured",
+    "ilvl": 78,
+    "slot": "Finger",
+    "boss": "Lord Kri",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Ring of the Godslayer",
+    "ilvl": 88,
+    "slot": "Finger",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Ring of the Martyr",
+    "ilvl": 78,
+    "slot": "Finger",
+    "boss": "Princess Huhuran",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Ring of the Qiraji Fury",
+    "ilvl": 78,
+    "slot": "Finger",
+    "boss": "Viscidus",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Robes of the Battleguard",
+    "ilvl": 76,
+    "slot": "Chest",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Robes of the Guardian Saint",
+    "ilvl": 77,
+    "slot": "Chest",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Robes of the Triumvirate",
+    "ilvl": 75,
+    "slot": "Chest",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "Royal Qiraji Belt",
+    "ilvl": 81,
+    "slot": "Waist",
+    "boss": "Emperor Vek'lor",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Royal Scepter of Vek'lor",
+    "ilvl": 81,
+    "slot": "Held In Off-hand",
+    "boss": "Emperor Vek'lor",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Off-hand Frill"
+  },
+  {
+    "name": "Sartura's Might",
+    "ilvl": 76,
+    "slot": "Held In Off-hand",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Off-hand Frill"
+  },
+  {
+    "name": "Scaled Leggings of Qiraji Fury",
+    "ilvl": 76,
+    "slot": "Legs",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Scaled Sand Reaver Leggings",
+    "ilvl": 77,
+    "slot": "Legs",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Scarab Brooch",
+    "ilvl": 78,
+    "slot": "Trinket",
+    "boss": "Viscidus",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Trinket"
+  },
+  {
+    "name": "Scepter of the False Prophet",
+    "ilvl": 84,
+    "slot": "Main Hand",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "One-Handed Mace"
+  },
+  {
+    "name": "Sharpened Silithid Femur",
+    "ilvl": 78,
+    "slot": "Main Hand",
+    "boss": "Viscidus",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "One-Handed Sword"
+  },
+  {
+    "name": "Silithid Carapace Chestguard",
+    "ilvl": 77,
+    "slot": "Chest",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Silithid Claw",
+    "ilvl": 76,
+    "slot": "Main Hand",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Fist Weapon"
+  },
+  {
+    "name": "Skin of the Great Sandworm",
+    "ilvl": 81,
+    "slot": "Legs",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "Varies",
+    "category": "Armor"
+  },
+  {
+    "name": "Slime-coated Leggings",
+    "ilvl": 78,
+    "slot": "Legs",
+    "boss": "Viscidus",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Staff of the Qiraji Prophets",
+    "ilvl": 75,
+    "slot": "Two-Hand",
+    "boss": "The Prophet Skeram",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Staff"
+  },
+  {
+    "name": "Ternary Mantle",
+    "ilvl": 75,
+    "slot": "Shoulder",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "Cloth",
+    "category": "Armor"
+  },
+  {
+    "name": "The Burrower's Shell",
+    "ilvl": 81,
+    "slot": "Trinket",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Trinket"
+  },
+  {
+    "name": "Thick Qirajihide Belt",
+    "ilvl": 76,
+    "slot": "Waist",
+    "boss": "Battleguard Sartura",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Totem of Life",
+    "ilvl": 78,
+    "slot": "Relic",
+    "boss": "Fankriss the Unyielding",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Totem"
+  },
+  {
+    "name": "Triad Girdle",
+    "ilvl": 75,
+    "slot": "Waist",
+    "boss": "Boss Drop",
+    "location": "AQ40",
+    "armor_type": "Plate",
+    "category": "Armor"
+  },
+  {
+    "name": "Ukko's Ring of Darkness",
+    "ilvl": 76,
+    "slot": "Finger",
+    "boss": "Princess Yauj",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Ring"
+  },
+  {
+    "name": "Vanquished Tentacle of C'Thun",
+    "ilvl": 88,
+    "slot": "Trinket",
+    "boss": "C'Thun",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Trinket"
+  },
+  {
+    "name": "Vek'lor's Diadem",
+    "ilvl": 81,
+    "slot": "Helm",
+    "boss": "Emperor Vek'lor",
+    "location": "AQ40",
+    "armor_type": "Varies",
+    "category": "Armor"
+  },
+  {
+    "name": "Vek'lor's Gloves of Devastation",
+    "ilvl": 81,
+    "slot": "Hands",
+    "boss": "Emperor Vek'lor",
+    "location": "AQ40",
+    "armor_type": "Mail",
+    "category": "Armor"
+  },
+  {
+    "name": "Vek'nilash's Circlet",
+    "ilvl": 81,
+    "slot": "Helm",
+    "boss": "Emperor Vek'nilash",
+    "location": "AQ40",
+    "armor_type": "Varies",
+    "category": "Armor"
+  },
+  {
+    "name": "Vest of Swift Execution",
+    "ilvl": 78,
+    "slot": "Chest",
+    "boss": "Lord Kri",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Wand of Qiraji Nobility",
+    "ilvl": 78,
+    "slot": "Ranged",
+    "boss": "Lord Kri",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Wand"
+  },
+  {
+    "name": "Wasphide Gauntlets",
+    "ilvl": 78,
+    "slot": "Hands",
+    "boss": "Princess Huhuran",
+    "location": "AQ40",
+    "armor_type": "Leather",
+    "category": "Armor"
+  },
+  {
+    "name": "Wormscale Blocker",
+    "ilvl": 81,
+    "slot": "Shield",
+    "boss": "Ouro",
+    "location": "AQ40",
+    "armor_type": "N/A",
+    "category": "Shield"
+  }
+]
