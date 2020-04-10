@@ -63,7 +63,7 @@ class Page extends React.Component {
             }
         ];
         return (
-            this.state.items.length == 0 ?
+            this.state.items.length === 0 ?
                 <h2>Loading</h2>
                 :
                 <BootstrapTable classes="table table-bordered table-dark" keyField='id' data={this.state.items} columns={columns} filter={filterFactory()} />
