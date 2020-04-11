@@ -54,13 +54,17 @@ class Page extends React.Component {
                 dataField: 'ilvl',
                 text: 'Item Level',
                 sort: true
+            },
+            {
+                dataField: 'item_id',
+                text: 'Item ID'
             }
         ];
         return (
             this.state.items.length === 0 ?
                 <h2>Loading</h2>
                 :
-                <BootstrapTable classes="table table-bordered table-dark" keyField='id' data={this.state.items} columns={columns} filter={filterFactory()} />
+                <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.items} columns={columns} filter={filterFactory()} />
 
         )
     }
