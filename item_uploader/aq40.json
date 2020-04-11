@@ -38,7 +38,7 @@
   {
     "name": "Angelista's Touch",
     "ilvl": 75,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "Boss Drop",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -470,7 +470,7 @@
   {
     "name": "Imperial Qiraji Armaments",
     "ilvl": 79,
-    "slot": "Weapon",
+    "slot": "One-Hand",
     "boss": "Boss Drop",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -479,7 +479,7 @@
   {
     "name": "Imperial Qiraji Regalia",
     "ilvl": 79,
-    "slot": "Weapon",
+    "slot": "One-Hand",
     "boss": "Boss Drop",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -650,7 +650,7 @@
   {
     "name": "Qiraji Bindings of Command",
     "ilvl": 78,
-    "slot": "Varies",
+    "slot": "Waist",
     "boss": "Boss Drop",
     "location": "AQ40",
     "armor_type": "Varies",
@@ -659,7 +659,7 @@
   {
     "name": "Qiraji Bindings of Dominance",
     "ilvl": 78,
-    "slot": "Varies",
+    "slot": "Waist",
     "boss": "Boss Drop",
     "location": "AQ40",
     "armor_type": "Varies",
@@ -695,7 +695,7 @@
   {
     "name": "Ring of Emperor Vek'lor",
     "ilvl": 81,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "Emperor Vek'lor",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -704,7 +704,7 @@
   {
     "name": "Ring of Swarming Thought",
     "ilvl": 73,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "The Prophet Skeram",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -713,7 +713,7 @@
   {
     "name": "Ring of the Devoured",
     "ilvl": 78,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "Lord Kri",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -722,7 +722,7 @@
   {
     "name": "Ring of the Godslayer",
     "ilvl": 88,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "C'Thun",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -731,7 +731,7 @@
   {
     "name": "Ring of the Martyr",
     "ilvl": 78,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "Princess Huhuran",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -740,7 +740,7 @@
   {
     "name": "Ring of the Qiraji Fury",
     "ilvl": 78,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "Viscidus",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -785,7 +785,7 @@
   {
     "name": "Royal Scepter of Vek'lor",
     "ilvl": 81,
-    "slot": "Held In Off-hand",
+    "slot": "Off Hand",
     "boss": "Emperor Vek'lor",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -794,7 +794,7 @@
   {
     "name": "Sartura's Might",
     "ilvl": 76,
-    "slot": "Held In Off-hand",
+    "slot": "Off Hand",
     "boss": "Battleguard Sartura",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -861,7 +861,7 @@
     "boss": "Battleguard Sartura",
     "location": "AQ40",
     "armor_type": "N/A",
-    "category": "Fist Weapon"
+    "category": "Fist One-Hand"
   },
   {
     "name": "Skin of the Great Sandworm",
@@ -938,7 +938,7 @@
   {
     "name": "Ukko's Ring of Darkness",
     "ilvl": 76,
-    "slot": "Finger",
+    "slot": "Ring",
     "boss": "Princess Yauj",
     "location": "AQ40",
     "armor_type": "N/A",
@@ -956,7 +956,7 @@
   {
     "name": "Vek'lor's Diadem",
     "ilvl": 81,
-    "slot": "Helm",
+    "slot": "Head",
     "boss": "Emperor Vek'lor",
     "location": "AQ40",
     "armor_type": "Varies",
@@ -974,7 +974,7 @@
   {
     "name": "Vek'nilash's Circlet",
     "ilvl": 81,
-    "slot": "Helm",
+    "slot": "Head",
     "boss": "Emperor Vek'nilash",
     "location": "AQ40",
     "armor_type": "Varies",

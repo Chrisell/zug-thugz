@@ -39,31 +39,20 @@ class Page extends React.Component {
                 dataField: 'name',
                 text: 'Item Name ',
                 filter: textFilter()
-            }, 
+            },
             {
                 dataField: 'boss',
                 text: 'Boss ',
                 filter: textFilter()
             }, 
             {
-                dataField: 'slot',
-                text: 'Slot ',
-                filter: textFilter(),
+                dataField: 'gp',
+                text: 'Gear Points',
                 sort: true
             }, 
             {
-                dataField: 'armor_type',
-                text: 'Armor Type',
-                filter: textFilter()
-            },
-            {
                 dataField: 'ilvl',
                 text: 'Item Level',
-                sort: true
-            },
-            {
-                dataField: 'category',
-                text: 'Category',
                 sort: true
             }
         ];
