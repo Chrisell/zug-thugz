@@ -1,7 +1,12 @@
 package main
 
 import (
+	"log"
 	"math"
+	"net/http"
+	"net/url"
+	"regexp"
+	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -23,6 +28,7 @@ type Item struct {
 	Location  string  `json:"location"`
 	Category  string  `json:"category"`
 	Ilvl      float64 `json:"ilvl"`
+	ItemID    string  `json:"item_id"`
 }
 
 func getItems() []Item {
@@ -35,6 +41,33 @@ func getItems() []Item {
 	var items []Item
 	json.Unmarshal(raw, &items)
 	return items
+}
+
+func getItemID(name string) string {
+	query := url.QueryEscape(name)
+	url := "https://classicdb.ch/opensearch.php?search=" + query
+
+	client := http.Client{
+		Timeout: time.Second * 2, // Maximum of 2 secs
+	}
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	res, getErr := client.Do(req)
+	if getErr != nil {
+		log.Fatal(getErr)
+	}
+
+	defer res.Body.Close()
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	re := regexp.MustCompile(`\d{5}`)
+	return string(re.Find([]byte(body)))
 }
 
 func main() {
@@ -75,6 +108,9 @@ func main() {
 		power := math.Pow(2.0, ((item.Ilvl/26.0)+(4.0-4.0))) * slotModifier
 		gp := modifier * power * 1
 		item.GP = int(math.Floor(gp))
+
+		item.ItemID = getItemID(item.Name)
+
 		av, err := dynamodbattribute.MarshalMap(item)
 		if err != nil {
 			fmt.Println("Got error marshalling map:")
@@ -94,6 +130,6 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Printf("Successfully added %s to table %s for GP of %d\n", item.Name, tableName, item.GP)
+		fmt.Printf("Successfully added %s : %s to table %s for GP of %d\n", item.ItemID, item.Name, tableName, item.GP)
 	}
 }
