@@ -2,6 +2,7 @@ import React from 'react';
 import './Page.css'
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import ReactTooltip from 'react-tooltip'
 
 class Page extends React.Component {
     constructor(props) {
@@ -12,14 +13,14 @@ class Page extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://hld2u3aup3.execute-api.us-east-1.amazonaws.com/api/items')
+        fetch('https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/items')
             .then(res => res.json())
             .then(
                 (result) => {
                     if (this.props.player) {
                         console.log(this.props.player)   
                     }
-                    this.setState({items: result['body']})
+                    this.setState({items: result})
                 },
                 (error) => {
                     this.setState({
@@ -38,7 +39,13 @@ class Page extends React.Component {
             {
                 dataField: 'name',
                 text: 'Item Name ',
-                filter: textFilter()
+                filter: textFilter(),
+                events: {
+                    onClick: (e, column, columnIndex, row, rowIndex) => {
+                        console.log(row);
+                        window.open(`https://classic.wowhead.com/item=${row.item_id}`, "_blank")
+                    }
+                }
             },
             {
                 dataField: 'boss',

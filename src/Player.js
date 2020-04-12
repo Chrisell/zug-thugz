@@ -1,17 +1,27 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Page from './Page.js'
+import {
+    Form,
+    Button,
+    Col,
+    Row
+} from 'react-bootstrap'
+import { AsyncTypeahead } from 'react-bootstrap-typeahead';
+import BootstrapTable from 'react-bootstrap-table-next';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter'
 import './Player.css'
-
+const requestOptions = {
+    method: 'post',
+};
 class Player extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            authenticated: false
+            authenticated: false,
+            isLoading: false,
+            options: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderForm = this.renderForm.bind(this);
+        this.renderLoginForm = this.renderLoginForm.bind(this);
     }
 
     handleSubmit = (event) => {
@@ -19,23 +29,16 @@ class Player extends React.Component {
         event.stopPropagation();
         const requestOptions = {
             method: 'post',
-            body: JSON.stringify({ 
-                // Name: event.target['formName'].value,
-                // Passcode: event.target['formPasscode'].value
-                Name: 'Ellbot',
-                Passcode: '123password'
-            })
         };
-        fetch('https://hld2u3aup3.execute-api.us-east-1.amazonaws.com/api/players', requestOptions)
+        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/needed?player_name=Ellbot`, requestOptions)
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result['Item'])
-
-                    console.log(result.body.Item.Name)
                     this.setState({
                         authenticated: true,
-                        player: result.body.Item
+                        needed_items: result,
+                        player: 'Ellbot',
+                        options: []
                     })
                 },
                 (error) => {
@@ -45,7 +48,7 @@ class Player extends React.Component {
             )
     };
 
-    renderForm = () => {
+    renderLoginForm = () => {
         return (
             <Form variant="dark" className="login" onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formName">
@@ -68,19 +71,100 @@ class Player extends React.Component {
     }
 
     renderSheets = () => {
+        const columns = [
+            {
+                dataField: 'location',
+                text: 'Location',
+            },
+            {
+                dataField: 'name',
+                text: 'Item Name ',
+                events: {
+                    onClick: (e, column, columnIndex, row, rowIndex) => {
+                         window.open(`https://classic.wowhead.com/item=${row.item_id}`, "_blank")
+                    }
+                }
+            },
+            {
+                dataField: 'boss',
+                text: 'Boss '
+            },
+            {
+                dataField: 'gp',
+                text: 'Gear Points',
+                sort: true
+            },
+            {
+                dataField: 'ilvl',
+                text: 'Item Level',
+                sort: true
+            },
+            {
+                dataField: 'item_id',
+                text: 'Item ID'
+            }
+        ];
         return (
             <div>
-                <h1>{this.state.player.Name}</h1>
-                <Page player={this.state}></Page>
+                <h1>{this.state.player}</h1>
+
+                <React.Fragment>
+                    <Row className="justify-content-md-center">
+                        <Col lg="4">
+                            <AsyncTypeahead
+                                {...this.state}
+                                id="item-search"
+                                labelKey="name"
+                                class=""
+                                minLength={3}
+                                onSearch={this._handleSearch}
+                                placeholder="Search for an item to add"
+                                renderMenuItemChildren={(option, props) => (
+                                    <p>{option.name}</p>
+                                )}
+                            />
+                        </Col>
+                        <Col lg="1">
+                            <Button variant="dark" type="submit">
+                                Submit
+                            </Button>    
+                        </Col>
+                    </Row>
+                </React.Fragment>
+                <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.needed_items} columns={columns} filter={filterFactory()} />
+
             </div>            
         )
+    }
+
+    _handleSearch = (query) => {
+        this.setState({ isLoading: true });
+        var lastchar = query.substring(query.length - 1, query.length);
+        var nextletter = String.fromCharCode(lastchar.charCodeAt(0) + 1);
+        var toitem = query.substring(0, query.length - 1)
+        toitem = toitem + nextletter;
+        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/search?item_name=${query}&to_item=${toitem}` , requestOptions)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result)
+                    this.setState({
+                        isLoading: false,
+                        options: result
+                    });
+                },
+                (error) => {
+                    console.log('error')
+                    console.log(error)
+                }
+            )
     }
 
     render() {
         if (this.state.authenticated) {
             return this.renderSheets()
         } else {
-            return this.renderForm()
+            return this.renderLoginForm()
         }
     }
 

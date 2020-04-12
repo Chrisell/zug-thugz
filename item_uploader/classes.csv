@@ -1,0 +1,4 @@
+~id, ~label, Type:String
+c1, class, Druid
+c2, class, Warrior
+c3, class, Mage

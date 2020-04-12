@@ -20,15 +20,22 @@ import (
 )
 
 type Item struct {
-	Name      string  `json:"name"`
-	Boss      string  `json:"boss"`
-	ArmorType string  `json:"armor_type"`
-	Slot      string  `json:"slot"`
-	GP        int     `json:"gp"`
-	Location  string  `json:"location"`
-	Category  string  `json:"category"`
-	Ilvl      float64 `json:"ilvl"`
-	ItemID    string  `json:"item_id"`
+	Name      string `json:"name"`
+	Boss      string `json:"boss"`
+	ArmorType string `json:"armor_type"`
+	Slot      string `json:"slot"`
+	GP        int    `json:"gp"`
+	Location  string `json:"location"`
+	Category  string `json:"category"`
+	Ilvl      int    `json:"ilvl"`
+	ItemID    string `json:"item_id"`
+	ToolTip   string `json:"tooltip"`
+}
+
+type ToolTip struct {
+	Quality string `json:"quality"`
+	Icon    string `json:"icon"`
+	HTML    string `json:"tooltip"`
 }
 
 func getItems() []Item {
@@ -70,6 +77,34 @@ func getItemID(name string) string {
 	return string(re.Find([]byte(body)))
 }
 
+func getItemTooltip(id string) string {
+	url := "https://classic.wowhead.com/tooltip/item/" + id
+
+	client := http.Client{
+		Timeout: time.Second * 2, // Maximum of 2 secs
+	}
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	res, getErr := client.Do(req)
+	if getErr != nil {
+		log.Fatal(getErr)
+	}
+
+	defer res.Body.Close()
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var tooltip ToolTip
+	json.Unmarshal(body, &tooltip)
+	println(tooltip.HTML)
+	return tooltip.HTML
+}
+
 func main() {
 	sess := session.Must(session.NewSessionWithOptions(session.Options{
 		SharedConfigState: session.SharedConfigEnable,
@@ -105,12 +140,12 @@ func main() {
 
 		modifier := 4.83
 		slotModifier := m[item.Slot]
-		power := math.Pow(2.0, ((item.Ilvl/26.0)+(4.0-4.0))) * slotModifier
+		power := math.Pow(2.0, ((float64(item.Ilvl)/26.0)+(4.0-4.0))) * slotModifier
 		gp := modifier * power * 1
 		item.GP = int(math.Floor(gp))
 
 		item.ItemID = getItemID(item.Name)
-
+		//item.ToolTip = getItemTooltip(item.ItemID)
 		av, err := dynamodbattribute.MarshalMap(item)
 		if err != nil {
 			fmt.Println("Got error marshalling map:")
@@ -130,6 +165,6 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Printf("Successfully added %s : %s to table %s for GP of %d\n", item.ItemID, item.Name, tableName, item.GP)
+		fmt.Printf("%s,%d,%s,%d,%s,%s,%s,%s,%s\n", item.ItemID, item.GP, item.Name, item.Ilvl, item.Slot, item.Boss, item.Location, item.ArmorType, item.Category)
 	}
 }

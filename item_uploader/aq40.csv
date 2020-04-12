@@ -1,0 +1,191 @@
+﻿~id,~label,GP:Int,Name:String,Ilvl:Int,Slot:String,Boss:String,Location:String,ArmorType:String,Category:String
+21702,item,16,Amulet of Foul Warding,73,Neck,The Prophet Skeram,AQ40,N/A,Amulet
+21608,item,20,Amulet of Vek'nilash,81,Neck,Emperor Vek'nilash,AQ40,N/A,Amulet
+21650,item,56,Ancient Qiraji Ripper,77,One-Hand,Fankriss the Unyielding,AQ40,N/A,One-Handed Sword
+21690,item,17,Angelista's Charm,75,Neck,Vem,AQ40,N/A,Amulet
+21695,item,17,Angelista's Touch,75,Ring,Boss Drop,AQ40,N/A,Ring
+21670,item,27,Badge of the Swarmguard,76,Trinket,Battleguard Sartura,AQ40,N/A,Trinket
+21635,item,75,Barb of the Sand Reaver,77,Two-Hand,Fankriss the Unyielding,AQ40,N/A,Polearm
+21664,item,18,Barbed Choker,77,Neck,Fankriss the Unyielding,AQ40,N/A,Amulet
+21699,item,25,Barrage Shoulders,73,Shoulder,The Prophet Skeram,AQ40,Mail,Armor
+21708,item,16,Beetle Scaled Wristguards,73,Wrist,The Prophet Skeram,AQ40,Leather,Armor
+21586,item,37,Belt of Never-ending Agony,88,Waist,C'Thun,AQ40,Leather,Armor
+21606,item,31,Belt of the Fallen Emperor,81,Waist,Emperor Vek'nilash,AQ40,Plate,Armor
+21682,item,28,Bile-Covered Gauntlets,78,Hands,Princess Yauj,AQ40,Leather,Armor
+21600,item,31,Boots of Epiphany,81,Feet,Emperor Vek'lor,AQ40,Cloth,Armor
+21688,item,26,Boots of the Fallen Hero,75,Feet,Vem,AQ40,Plate,Armor
+21705,item,25,Boots of the Fallen Prophet,73,Feet,The Prophet Skeram,AQ40,Mail,Armor
+21704,item,25,Boots of the Redeemed Prophecy,73,Feet,The Prophet Skeram,AQ40,Plate,Armor
+21706,item,25,Boots of the Unwavering Will,73,Feet,The Prophet Skeram,AQ40,Plate,Armor
+21604,item,20,Bracelets of Royal Redemption,81,Wrist,Emperor Vek'nilash,AQ40,Cloth,Armor
+21814,item,33,Breastplate of Annihilation,73,Chest,The Prophet Skeram,AQ40,Plate,Armor
+21611,item,20,Burrower Bracers,81,Wrist,Ouro,AQ40,Cloth,Armor
+21697,item,17,Cape of the Trinity,75,Back,Boss Drop,AQ40,N/A,Cloak
+20929,item,50,Carapace of the Old God,88,Chest,C'Thun,AQ40,Varies,Armor
+21583,item,25,Cloak of Clarity,88,Back,C'Thun,AQ40,N/A,Cloak
+21701,item,16,Cloak of Concentrated Hatred,73,Back,The Prophet Skeram,AQ40,N/A,Cloak
+22731,item,25,Cloak of the Devoured,88,Back,C'Thun,AQ40,N/A,Cloak
+21621,item,19,Cloak of the Golden Hive,78,Back,Princess Huhuran,AQ40,N/A,Cloak
+21627,item,18,Cloak of Untold Secrets,77,Back,Fankriss the Unyielding,AQ40,N/A,Cloak
+21669,item,36,Creeping Vine Helm,76,Head,Battleguard Sartura,AQ40,Leather,Armor
+21134,item,90,Dark Edge of Insanity,84,Two-Hand,C'Thun,AQ40,N/A,Two-Handed Axe
+21585,item,37,Dark Storm Gauntlets,88,Hands,C'Thun,AQ40,Cloth,Armor
+21126,item,68,Death's Sting,84,One-Hand,C'Thun,AQ40,N/A,Dagger
+21615,item,41,Don Rigoberto's Lost Hat,81,Head,Ouro,AQ40,Cloth,Armor
+21221,item,50,Eye of C'Thun,88,Varies,C'Thun,AQ40,N/A,Varies
+22730,item,37,Eyestalk Waist Cord,88,Waist,C'Thun,AQ40,Cloth,Armor
+21647,item,28,Fetish of the Sand Reaver,77,Trinket,Fankriss the Unyielding,AQ40,N/A,Trinket
+21581,item,37,Gauntlets of Annihilation,88,Hands,C'Thun,AQ40,Plate,Armor
+21624,item,28,Gauntlets of Kalimdor,78,Hands,Viscidus,AQ40,Mail,Armor
+21674,item,27,Gauntlets of Steadfast Determination,76,Hands,Battleguard Sartura,AQ40,Plate,Armor
+21689,item,26,Gloves of Ebru,75,Hands,Vem,AQ40,Leather,Armor
+21672,item,27,Gloves of Enforcement,76,Hands,Battleguard Sartura,AQ40,Leather,Armor
+21605,item,31,Gloves of the Hidden Temple,81,Hands,Emperor Vek'nilash,AQ40,Leather,Armor
+21619,item,28,Gloves of the Messiah,78,Hands,Princess Huhuran,AQ40,Cloth,Armor
+21607,item,31,Grasp of the Fallen Emperor,81,Waist,Emperor Vek'nilash,AQ40,Mail,Armor
+21582,item,37,Grasp of the Old God,88,Waist,C'Thun,AQ40,Cloth,Armor
+21693,item,35,Guise of the Devourer,75,Head,Boss Drop,AQ40,Leather,Armor
+21703,item,67,Hammer of Ji'zhi,73,Two-Hand,The Prophet Skeram,AQ40,N/A,Two-Handed Mace
+21618,item,19,Hive Defiler Wristguards,78,Wrist,Princess Huhuran,AQ40,Plate,Armor
+21645,item,28,Hive Tunneler's Boots,77,Feet,Fankriss the Unyielding,AQ40,Leather,Armor
+21616,item,19,Huhuran's Stinger,78,Ranged,Princess Huhuran,AQ40,N/A,Bow
+20933,item,50,Husk of the Old God,88,Chest,C'Thun,AQ40,N/A,Armor
+22399,item,19,Idol of Health,78,Relic,Viscidus,AQ40,N/A,Idol
+21232,item,59,Imperial Qiraji Armaments,79,One-Hand,Boss Drop,AQ40,N/A,Varies
+21237,item,59,Imperial Qiraji Regalia,79,One-Hand,Boss Drop,AQ40,N/A,Varies
+23570,item,31,Jom Gabbar,81,Trinket,Ouro,AQ40,N/A,Trinket
+21679,item,83,Kalimdor's Revenge,81,Two-Hand,Emperor Vek'nilash,AQ40,N/A,Two-Handed Sword
+23557,item,20,Larvae of the Great Worm,81,Ranged,Ouro,AQ40,N/A,Gun
+21698,item,33,Leggings of Immersion,73,Legs,The Prophet Skeram,AQ40,Leather,Armor
+21676,item,36,Leggings of the Festering Swarm,76,Legs,Battleguard Sartura,AQ40,Cloth,Armor
+21667,item,36,Legplates of Blazing Light,76,Legs,Battleguard Sartura,AQ40,Plate,Armor
+22402,item,19,Libram of Grace,78,Relic,Fankriss the Unyielding,AQ40,N/A,Libram
+21686,item,27,Mantle of Phrenic Power,76,Shoulder,Princess Yauj,AQ40,Cloth,Armor
+21683,item,27,Mantle of the Desert Crusade,76,Shoulder,Princess Yauj,AQ40,Plate,Armor
+21684,item,27,Mantle of the Desert's Fury,76,Shoulder,Princess Yauj,AQ40,Mail,Armor
+21665,item,28,Mantle of Wicked Revenge,77,Shoulder,Fankriss the Unyielding,AQ40,Leather,Armor
+22732,item,25,Mark of C'Thun,88,Neck,C'Thun,AQ40,N/A,Amulet
+21678,item,18,Necklace of Purity,76,Neck,Battleguard Sartura,AQ40,N/A,Amulet
+21691,item,26,Ooze-ridden Gauntlets,75,Hands,Vem,AQ40,Plate,Armor
+20927,item,41,Ouro's Intact Hide,81,Legs,Ouro,AQ40,Varies,Armor
+21639,item,28,Pauldrons of the Unrelenting,77,Shoulder,Fankriss the Unyielding,AQ40,Plate,Armor
+21700,item,16,Pendant of the Qiraji Guardian,73,Neck,The Prophet Skeram,AQ40,N/A,Amulet
+21685,item,27,Petrified Scarab,76,Trinket,Lord Kri,AQ40,N/A,Trinket
+20928,item,28,Qiraji Bindings of Command,78,Waist,Boss Drop,AQ40,Varies,Armor
+20932,item,28,Qiraji Bindings of Dominance,78,Waist,Boss Drop,AQ40,Varies,Armor
+21602,item,20,Qiraji Execution Bracers,81,Wrist,Emperor Vek'lor,AQ40,Leather,Armor
+21648,item,27,Recomposed Boots,76,Feet,Battleguard Sartura,AQ40,Cloth,Armor
+21609,item,31,Regenerating Belt of Vek'nilash,81,Waist,Emperor Vek'nilash,AQ40,Leather,Armor
+21601,item,20,Ring of Emperor Vek'lor,81,Ring,Emperor Vek'lor,AQ40,N/A,Ring
+21707,item,16,Ring of Swarming Thought,73,Ring,The Prophet Skeram,AQ40,N/A,Ring
+21681,item,19,Ring of the Devoured,78,Ring,Lord Kri,AQ40,N/A,Ring
+21596,item,25,Ring of the Godslayer,88,Ring,C'Thun,AQ40,N/A,Ring
+21620,item,19,Ring of the Martyr,78,Ring,Princess Huhuran,AQ40,N/A,Ring
+21677,item,19,Ring of the Qiraji Fury,78,Ring,Viscidus,AQ40,N/A,Ring
+21671,item,36,Robes of the Battleguard,76,Chest,Battleguard Sartura,AQ40,Cloth,Armor
+21663,item,37,Robes of the Guardian Saint,77,Chest,Fankriss the Unyielding,AQ40,Cloth,Armor
+21696,item,35,Robes of the Triumvirate,75,Chest,Boss Drop,AQ40,Cloth,Armor
+21598,item,31,Royal Qiraji Belt,81,Waist,Emperor Vek'lor,AQ40,Plate,Armor
+21597,item,20,Royal Scepter of Vek'lor,81,Off Hand,Emperor Vek'lor,AQ40,N/A,Off-hand Frill
+21666,item,18,Sartura's Might,76,Off Hand,Battleguard Sartura,AQ40,N/A,Off-hand Frill
+21668,item,36,Scaled Leggings of Qiraji Fury,76,Legs,Battleguard Sartura,AQ40,Mail,Armor
+21651,item,37,Scaled Sand Reaver Leggings,77,Legs,Fankriss the Unyielding,AQ40,Mail,Armor
+21625,item,28,Scarab Brooch,78,Trinket,Viscidus,AQ40,N/A,Trinket
+21839,item,68,Scepter of the False Prophet,84,Main Hand,C'Thun,AQ40,N/A,One-Handed Mace
+21622,item,57,Sharpened Silithid Femur,78,Main Hand,Viscidus,AQ40,N/A,One-Handed Sword
+21652,item,37,Silithid Carapace Chestguard,77,Chest,Fankriss the Unyielding,AQ40,Plate,Armor
+21673,item,54,Silithid Claw,76,Main Hand,Battleguard Sartura,AQ40,N/A,Fist One-Hand
+20931,item,41,Skin of the Great Sandworm,81,Legs,Ouro,AQ40,Varies,Armor
+21626,item,38,Slime-coated Leggings,78,Legs,Viscidus,AQ40,Mail,Armor
+21128,item,71,Staff of the Qiraji Prophets,75,Two-Hand,The Prophet Skeram,AQ40,N/A,Staff
+21694,item,26,Ternary Mantle,75,Shoulder,Boss Drop,AQ40,Cloth,Armor
+23558,item,31,The Burrower's Shell,81,Trinket,Ouro,AQ40,N/A,Trinket
+21675,item,27,Thick Qirajihide Belt,76,Waist,Battleguard Sartura,AQ40,Leather,Armor
+22396,item,19,Totem of Life,78,Relic,Fankriss the Unyielding,AQ40,N/A,Totem
+21692,item,26,Triad Girdle,75,Waist,Boss Drop,AQ40,Plate,Armor
+21687,item,18,Ukko's Ring of Darkness,76,Ring,Princess Yauj,AQ40,N/A,Ring
+21579,item,37,Vanquished Tentacle of C'Thun,88,Trinket,C'Thun,AQ40,N/A,Trinket
+20930,item,41,Vek'lor's Diadem,81,Head,Emperor Vek'lor,AQ40,Varies,Armor
+21599,item,31,Vek'lor's Gloves of Devastation,81,Hands,Emperor Vek'lor,AQ40,Mail,Armor
+20926,item,41,Vek'nilash's Circlet,81,Head,Emperor Vek'nilash,AQ40,Varies,Armor
+21680,item,38,Vest of Swift Execution,78,Chest,Lord Kri,AQ40,Leather,Armor
+21603,item,19,Wand of Qiraji Nobility,78,Ranged,Lord Kri,AQ40,N/A,Wand
+21617,item,28,Wasphide Gauntlets,78,Hands,Princess Huhuran,AQ40,Leather,Armor
+21610,item,20,Wormscale Blocker,81,Shield,Ouro,AQ40,N/A,Shield
+Gauntlets of Annihilation,88,Hands,C'Thun,AQ40,Plate,Armor
+Gauntlets of Kalimdor,78,Hands,Viscidus,AQ40,Mail,Armor
+Gauntlets of Steadfast Determination,76,Hands,Battleguard Sartura,AQ40,Plate,Armor
+Gloves of Ebru,75,Hands,Vem,AQ40,Leather,Armor
+Gloves of Enforcement,76,Hands,Battleguard Sartura,AQ40,Leather,Armor
+Gloves of the Hidden Temple,81,Hands,Emperor Vek'nilash,AQ40,Leather,Armor
+Gloves of the Messiah,78,Hands,Princess Huhuran,AQ40,Cloth,Armor
+Grasp of the Fallen Emperor,81,Waist,Emperor Vek'nilash,AQ40,Mail,Armor
+Grasp of the Old God,88,Waist,C'Thun,AQ40,Cloth,Armor
+Guise of the Devourer,75,Head,Boss Drop,AQ40,Leather,Armor
+Hammer of Ji'zhi,73,Two-Hand,The Prophet Skeram,AQ40,N/A,Two-Handed Mace
+Hive Defiler Wristguards,78,Wrist,Princess Huhuran,AQ40,Plate,Armor
+Hive Tunneler's Boots,77,Feet,Fankriss the Unyielding,AQ40,Leather,Armor
+Huhuran's Stinger,78,Ranged,Princess Huhuran,AQ40,N/A,Bow
+Husk of the Old God,88,Chest,C'Thun,AQ40,N/A,Armor
+Idol of Health,78,Relic,Viscidus,AQ40,N/A,Idol
+Imperial Qiraji Armaments,79,One-Hand,Boss Drop,AQ40,N/A,Varies
+Imperial Qiraji Regalia,79,One-Hand,Boss Drop,AQ40,N/A,Varies
+Jom Gabbar,81,Trinket,Ouro,AQ40,N/A,Trinket
+Kalimdor's Revenge,81,Two-Hand,Emperor Vek'nilash,AQ40,N/A,Two-Handed Sword
+Larvae of the Great Worm,81,Ranged,Ouro,AQ40,N/A,Gun
+Leggings of Immersion,73,Legs,The Prophet Skeram,AQ40,Leather,Armor
+Leggings of the Festering Swarm,76,Legs,Battleguard Sartura,AQ40,Cloth,Armor
+Legplates of Blazing Light,76,Legs,Battleguard Sartura,AQ40,Plate,Armor
+Libram of Grace,78,Relic,Fankriss the Unyielding,AQ40,N/A,Libram
+Mantle of Phrenic Power,76,Shoulder,Princess Yauj,AQ40,Cloth,Armor
+Mantle of the Desert Crusade,76,Shoulder,Princess Yauj,AQ40,Plate,Armor
+Mantle of the Desert's Fury,76,Shoulder,Princess Yauj,AQ40,Mail,Armor
+Mantle of Wicked Revenge,77,Shoulder,Fankriss the Unyielding,AQ40,Leather,Armor
+Mark of C'Thun,88,Neck,C'Thun,AQ40,N/A,Amulet
+Necklace of Purity,76,Neck,Battleguard Sartura,AQ40,N/A,Amulet
+Ooze-ridden Gauntlets,75,Hands,Vem,AQ40,Plate,Armor
+Ouro's Intact Hide,81,Legs,Ouro,AQ40,Varies,Armor
+Pauldrons of the Unrelenting,77,Shoulder,Fankriss the Unyielding,AQ40,Plate,Armor
+Pendant of the Qiraji Guardian,73,Neck,The Prophet Skeram,AQ40,N/A,Amulet
+Petrified Scarab,76,Trinket,Lord Kri,AQ40,N/A,Trinket
+Qiraji Bindings of Command,78,Waist,Boss Drop,AQ40,Varies,Armor
+Qiraji Bindings of Dominance,78,Waist,Boss Drop,AQ40,Varies,Armor
+Qiraji Execution Bracers,81,Wrist,Emperor Vek'lor,AQ40,Leather,Armor
+Recomposed Boots,76,Feet,Battleguard Sartura,AQ40,Cloth,Armor
+Regenerating Belt of Vek'nilash,81,Waist,Emperor Vek'nilash,AQ40,Leather,Armor
+Ring of Emperor Vek'lor,81,Ring,Emperor Vek'lor,AQ40,N/A,Ring
+Ring of Swarming Thought,73,Ring,The Prophet Skeram,AQ40,N/A,Ring
+Ring of the Devoured,78,Ring,Lord Kri,AQ40,N/A,Ring
+Ring of the Godslayer,88,Ring,C'Thun,AQ40,N/A,Ring
+Ring of the Martyr,78,Ring,Princess Huhuran,AQ40,N/A,Ring
+Ring of the Qiraji Fury,78,Ring,Viscidus,AQ40,N/A,Ring
+Robes of the Battleguard,76,Chest,Battleguard Sartura,AQ40,Cloth,Armor
+Robes of the Guardian Saint,77,Chest,Fankriss the Unyielding,AQ40,Cloth,Armor
+Robes of the Triumvirate,75,Chest,Boss Drop,AQ40,Cloth,Armor
+Royal Qiraji Belt,81,Waist,Emperor Vek'lor,AQ40,Plate,Armor
+Royal Scepter of Vek'lor,81,Off Hand,Emperor Vek'lor,AQ40,N/A,Off-hand Frill
+Sartura's Might,76,Off Hand,Battleguard Sartura,AQ40,N/A,Off-hand Frill
+Scaled Leggings of Qiraji Fury,76,Legs,Battleguard Sartura,AQ40,Mail,Armor
+Scaled Sand Reaver Leggings,77,Legs,Fankriss the Unyielding,AQ40,Mail,Armor
+Scarab Brooch,78,Trinket,Viscidus,AQ40,N/A,Trinket
+Scepter of the False Prophet,84,Main Hand,C'Thun,AQ40,N/A,One-Handed Mace
+Sharpened Silithid Femur,78,Main Hand,Viscidus,AQ40,N/A,One-Handed Sword
+Silithid Carapace Chestguard,77,Chest,Fankriss the Unyielding,AQ40,Plate,Armor
+Silithid Claw,76,Main Hand,Battleguard Sartura,AQ40,N/A,Fist One-Hand
+Skin of the Great Sandworm,81,Legs,Ouro,AQ40,Varies,Armor
+Slime-coated Leggings,78,Legs,Viscidus,AQ40,Mail,Armor
+Staff of the Qiraji Prophets,75,Two-Hand,The Prophet Skeram,AQ40,N/A,Staff
+Ternary Mantle,75,Shoulder,Boss Drop,AQ40,Cloth,Armor
+The Burrower's Shell,81,Trinket,Ouro,AQ40,N/A,Trinket
+Thick Qirajihide Belt,76,Waist,Battleguard Sartura,AQ40,Leather,Armor
+Totem of Life,78,Relic,Fankriss the Unyielding,AQ40,N/A,Totem
+Triad Girdle,75,Waist,Boss Drop,AQ40,Plate,Armor
+Ukko's Ring of Darkness,76,Ring,Princess Yauj,AQ40,N/A,Ring
+Vanquished Tentacle of C'Thun,88,Trinket,C'Thun,AQ40,N/A,Trinket
+Vek'lor's Diadem,81,Head,Emperor Vek'lor,AQ40,Varies,Armor
+Vek'lor's Gloves of Devastation,81,Hands,Emperor Vek'lor,AQ40,Mail,Armor
+Vek'nilash's Circlet,81,Head,Emperor Vek'nilash,AQ40,Varies,Armor
+Vest of Swift Execution,78,Chest,Lord Kri,AQ40,Leather,Armor
+Wand of Qiraji Nobility,78,Ranged,Lord Kri,AQ40,N/A,Wand
+Wasphide Gauntlets,78,Hands,Princess Huhuran,AQ40,Leather,Armor
+Wormscale Blocker,81,Shield,Ouro,AQ40,N/A,Shield
