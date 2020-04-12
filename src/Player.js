@@ -7,7 +7,6 @@ import {
 } from 'react-bootstrap'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
-import filterFactory, { textFilter } from 'react-bootstrap-table2-filter'
 import './Player.css'
 const requestOptions = {
     method: 'post',
@@ -126,7 +125,7 @@ class Player extends React.Component {
                         </Col>
                         <Col lg="1">
                             <Button variant="dark" type="submit">
-                                Submit
+                                Add Item
                             </Button>    
                         </Col>
                     </Row>

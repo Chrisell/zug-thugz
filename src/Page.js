@@ -2,7 +2,6 @@ import React from 'react';
 import './Page.css'
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
-import ReactTooltip from 'react-tooltip'
 
 class Page extends React.Component {
     constructor(props) {
@@ -71,7 +70,9 @@ class Page extends React.Component {
             this.state.items.length === 0 ?
                 <h2>Loading</h2>
                 :
-                <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.items} columns={columns} filter={filterFactory()} />
+                <div>
+                    <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.items} columns={columns} filter={filterFactory()} />
+                </div>
 
         )
     }
