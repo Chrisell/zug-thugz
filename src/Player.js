@@ -27,17 +27,18 @@ class Player extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
+        const player_name = event.target['formName'].value
         const requestOptions = {
             method: 'post',
         };
-        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/needed?player_name=Ellbot`, requestOptions)
+        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/needed?player_name=${player_name}`, requestOptions)
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
                         authenticated: true,
                         needed_items: result,
-                        player: 'Ellbot',
+                        player: player_name,
                         options: []
                     })
                 },
