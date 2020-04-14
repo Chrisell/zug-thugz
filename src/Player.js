@@ -9,7 +9,7 @@ import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory from 'react-bootstrap-table2-filter'
 import './Player.css'
-const requestOptions = {
+const postOptions = {
     method: 'post',
 };
 class Player extends React.Component {
@@ -18,20 +18,46 @@ class Player extends React.Component {
         this.state = {
             authenticated: false,
             isLoading: false,
-            options: []
+            options: [],
+            new_item:[1]
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.addItemToNeedList = this.addItemToNeedList.bind(this);
         this.renderLoginForm = this.renderLoginForm.bind(this);
+    }
+
+    addItemToNeedList = () => {
+        const player_name = this.state.player
+        const new_item = this.state.new_item[0]
+        console.log(new_item)
+        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/add_needed_item`, {
+            method: "post",
+            body: JSON.stringify({
+                item_id: new_item.item_id,
+                player_name: player_name
+            })
+        })
+            .then(res => res.json())
+            .then(
+                (_result) => {
+                    var joined = this.state.needed_items.concat(new_item);
+                    this.setState({
+                        needed_items: joined,
+                        new_item: []
+                    })
+                },
+                (error) => {
+                    console.log('error')
+                    console.log(error)
+                }
+            )
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
         const player_name = event.target['formName'].value
-        const requestOptions = {
-            method: 'post',
-        };
-        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/needed?player_name=${player_name}`, requestOptions)
+        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/needed?player_name=${player_name}`, postOptions)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -118,6 +144,7 @@ class Player extends React.Component {
                                 labelKey="name"
                                 class=""
                                 minLength={3}
+                                onChange={(i) => this.setState({ new_item: i })}
                                 onSearch={this._handleSearch}
                                 placeholder="Search for an item to add"
                                 renderMenuItemChildren={(option, props) => (
@@ -126,7 +153,7 @@ class Player extends React.Component {
                             />
                         </Col>
                         <Col lg="1">
-                            <Button variant="dark" type="submit">
+                            <Button variant="dark" type="submit" onClick={this.addItemToNeedList}>
                                 Add Item
                             </Button>    
                         </Col>
@@ -138,13 +165,14 @@ class Player extends React.Component {
         )
     }
 
+
     _handleSearch = (query) => {
         this.setState({ isLoading: true });
         var lastchar = query.substring(query.length - 1, query.length);
         var nextletter = String.fromCharCode(lastchar.charCodeAt(0) + 1);
         var toitem = query.substring(0, query.length - 1)
         toitem = toitem + nextletter;
-        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/search?item_name=${query}&to_item=${toitem}` , requestOptions)
+        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/search?item_name=${query}&to_item=${toitem}` , postOptions)
             .then(res => res.json())
             .then(
                 (result) => {
