@@ -8,10 +8,19 @@ import {
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory from 'react-bootstrap-table2-filter'
+import Tooltop from 'react-tooltip'
 import './Player.css'
 const postOptions = {
     method: 'post',
 };
+
+function itemFormatter(cell, row) {
+    var link = "https://vanillawowdb.com/?item=" + row.item_id
+    return (
+        <a target="_blank" href={link}>{cell}</a>
+    );
+}
+
 class Player extends React.Component {
     constructor(props) {
         super(props);
@@ -24,8 +33,27 @@ class Player extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.addItemToNeedList = this.addItemToNeedList.bind(this);
         this.renderLoginForm = this.renderLoginForm.bind(this);
+        this.fetchNeededItems = this.fetchNeededItems.bind(this);
     }
-
+    fetchNeededItems = (item_id) => {
+        console.log('needed')
+        fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/all_needs`, {
+            method: "post",
+            body: JSON.stringify({
+                item_id: item_id,
+            })
+        })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result)
+                },
+                (error) => {
+                    console.log('error')
+                    console.log(error)
+                }
+            )
+    }
     addItemToNeedList = () => {
         const player_name = this.state.player
         const new_item = this.state.new_item[0]
@@ -106,11 +134,7 @@ class Player extends React.Component {
             {
                 dataField: 'name',
                 text: 'Item Name ',
-                events: {
-                    onClick: (e, column, columnIndex, row, rowIndex) => {
-                         window.open(`https://classic.wowhead.com/item=${row.item_id}`, "_blank")
-                    }
-                }
+                formatter: itemFormatter
             },
             {
                 dataField: 'boss',
@@ -159,12 +183,11 @@ class Player extends React.Component {
                         </Col>
                     </Row>
                 </React.Fragment>
-                <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.needed_items} columns={columns} filter={filterFactory()} />
+                <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.needed_items} columns={columns} filter={filterFactory()}></BootstrapTable> />
 
             </div>            
         )
     }
-
 
     _handleSearch = (query) => {
         this.setState({ isLoading: true });

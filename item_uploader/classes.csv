@@ -1,4 +1,13 @@
-~id, ~label, Type:String
-c1, class, Druid
-c2, class, Warrior
-c3, class, Mage
+~id, ~label, type:String
+Druid, class, Druid
+Warrior, class, Warrior
+Mage, class, Mage
+Blacksmithing, profession,Blacksmithing 
+Engineering, profession,Engineering 
+Leatherworking, profession,Leatherworking 
+Tailoring, profession, Tailoring 
+Enchanting, profession,Enchanting 
+Mining, profession,Mining 
+Skinning, profession,Skinning 
+Herbalism, profession,Herbalism
+Alchemy, profession, Alchemy

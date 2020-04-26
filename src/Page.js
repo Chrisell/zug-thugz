@@ -3,6 +3,13 @@ import './Page.css'
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
+function itemFormatter(cell, row) {
+    var link = "https://vanillawowdb.com/?item=" + row.item_id
+    return (
+        <a target="_blank" href={link}>{cell}</a>
+    );
+}
+
 class Page extends React.Component {
     constructor(props) {
         super(props);
@@ -29,6 +36,8 @@ class Page extends React.Component {
             )
     }
 
+    
+
     render() {
         const columns = [
             {
@@ -38,13 +47,7 @@ class Page extends React.Component {
             {
                 dataField: 'name',
                 text: 'Item Name ',
-                filter: textFilter(),
-                events: {
-                    onClick: (e, column, columnIndex, row, rowIndex) => {
-                        console.log(row);
-                        window.open(`https://classic.wowhead.com/item=${row.item_id}`, "_blank")
-                    }
-                }
+                formatter: itemFormatter
             },
             {
                 dataField: 'boss',
