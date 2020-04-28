@@ -17,7 +17,7 @@ const postOptions = {
 function itemFormatter(cell, row) {
     var link = "https://vanillawowdb.com/?item=" + row.item_id
     return (
-        <a target="_blank" href={link}>{cell}</a>
+        <a target="_blank" rel="noopener noreferrer" href={link}>{cell}</a>
     );
 }
 
