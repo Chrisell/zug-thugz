@@ -8,7 +8,7 @@ import {
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory from 'react-bootstrap-table2-filter'
-import Tooltop from 'react-tooltip'
+
 import './Player.css'
 const postOptions = {
     method: 'post',

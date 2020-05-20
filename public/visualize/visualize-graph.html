@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--
+ * MIT License
+
+* Copyright (c) 2018.  Amazon Web Services, Inc. All Rights Reserved.
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Amazon Neptune | Graph Visualization</title>
+
+    <style type="text/css">
+        html, body {
+            font: 10pt arial;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #mynetwork {
+            width: 1000px;
+            height: 750px;
+            border: 1px solid lightgray;
+        }
+        #config {
+            float:right;
+            width: 400px;
+            height: 600px;
+        }
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript" src="http://vanillawowdb.com/tooltips/power.js?vnew"></script>
+    <script>
+        var aowow_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }
+    </script>
+    <script type="text/javascript" src="vis.js"></script>
+    <link href="vis-network.min.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        var PROXY_API_URL = "https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph";
+        // var nodes = null;
+        var edges = null;
+        var network = null;
+        var resp =null;
+        var options =null;
+
+        var searchfill=null;
+
+        var LENGTH_MAIN = 350,
+            LENGTH_SERVER = 150,
+            LENGTH_SUB = 50,
+            WIDTH_SCALE = 2,
+            GREEN = 'green',
+            RED = '#C5000B',
+            ORANGE = 'orange',
+            //GRAY = '#666666',
+            GRAY = 'gray',
+            BLACK = '#2B1B17';
+
+
+
+        $(document).ready(function(){
+
+            console.log('Initializing the page..and loading the values in the Search LoV');
+            $.get(PROXY_API_URL + "/initialize", function(data) {
+                    console.log(data);
+                    var js=JSON.parse(JSON.stringify(data))
+                    searchfill=[];
+                    for(i=0;i< js.length; i++)
+                    {
+                        searchfill.push(js[i].name);
+                    }
+                    console.log(searchfill);
+                    
+                    $( "#items" ).autocomplete({
+                        source:
+                            function (request, response) {
+                                var filteredArray = $.map(searchfill, function (item) {
+                                    //console.log(item);
+                                    if (item.startsWith(request.term)) {
+                                        return item;
+                                    }
+                                    else {
+                                        return null;
+                                    }
+                                });
+                                response(filteredArray);
+                            }
+                    });
+
+                }
+                
+            );
+            <!-- called when user clicks on the Search button -->
+            $( "#item-go" ).click(function(event){
+                var username = $("#items").val();
+                var lastchar= username.substring(username.length-1, username.length);
+                var nextletter= String.fromCharCode(lastchar.charCodeAt(0)+1);
+                var touser = username.substring(0,username.length-1)
+                touser = touser+nextletter;
+
+                $.get(PROXY_API_URL + "/search?item_name="+username+"&to_item="+touser, function(data) {
+                    var resp = JSON.parse(JSON.stringify(data));
+                    console.log(resp);
+                    var x=0;
+                    var y=0;
+                    for(let i=0;i< resp.length;i++) {
+                        try {
+                            add_item_node(resp[i], nodes, edges)
+                            callneptunegetitems(resp[i].item_id, nodes, edges);
+                        }
+                        catch (e) { //if node is already added just continue
+                            //throw e;
+                            nodes.remove({id:resp[i].item_id });
+                            add_item_node(resp[i], nodes, edges)
+                        }
+                    }
+                });
+
+            });
+
+            $("#player-go").click(function (event) {
+                $.get(PROXY_API_URL + "/players", function (data) {
+                    var resp = JSON.parse(JSON.stringify(data));
+                    console.log(resp);
+                    var x = 0;
+                    var y = 0;
+                    for (let i = 0; i < resp.length; i++) {
+                        try {
+                            nodes.add({ id: resp[i].name, label: resp[i].name, value: resp[i].name, color: 'gray', font: { color: 'white' } });
+                            //callneptunegetitems(resp[i].item_id, nodes, edges);
+                        }
+                        catch (e) { //if node is already added just continue
+                            //throw e;
+                        }
+                    }
+                });
+            });
+            $("#professions-go").click(function (event) {
+                $.get(PROXY_API_URL + "/professions", function (data) {
+                    //var resp = JSON.parse(JSON.stringify(data));
+                    for (let i = 0; i < data.length; i++) {
+                        console.log(data[i])
+                        try {
+                            nodes.add({ id: data[i].name, label: data[i].name, value: data[i].name, title: 'Profession', color: 'black', font: { color: 'white' } });
+                        } //add an edge
+                        catch (e) {
+                            console.log('clicked on the same node twice');
+                        }
+                    }
+                });
+            });
+            $("#bosses-go").click(function (event) {
+                $.get(PROXY_API_URL + "/bosses", function (data) {
+                    var resp = JSON.parse(JSON.stringify(data));
+                    console.log(resp);
+                    var x = 0;
+                    var y = 0;
+                    for (let i = 0; i < resp.length; i++) {
+                        try {
+                            nodes.add({ id: resp[i].name, label: resp[i].name, value: resp[i].name, title: 'Boss', color: 'red', font: { color: 'white' } });
+                        }
+                        catch (e) { //if node is already added just continue
+                            //throw e;
+                        }
+                    }
+                });
+
+            });
+
+            <!-- call to render the VIS.js canvas -->
+            draw();
+
+        });
+
+        // Called when the Visualization API is loaded.
+        function draw() {
+            resp = "";
+            console.log('Inside draw function to render graph elements (nodes/edges)...');
+
+            // Create a data table with nodes.
+            nodes = []; //this will be converted to an object below
+            // Create a data table with links.
+            edges = []; //this will be converted to an object below
+
+            nodes = new vis.DataSet();
+            //handle events on "nodes" object that is added to network
+            //for e.g. add a node to the "nodes" object invokes this event
+            nodes.on("*", function (event) {
+                //document.getElementById('nodes').innerHTML = JSON.stringify(nodes.get(), null, 4);
+                //console.log('you just added on a node... :');
+                //console.log(event);
+            });
+
+            edges = new vis.DataSet();
+            var container = document.getElementById('mynetwork');
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+
+            //options = { };
+
+            options = {
+                nodes: {
+                    shape: 'box'
+                }
+            };
+
+            network = new vis.Network(container, data, options);
+            network.on("click", function (params) {
+                params.event = "[original event]";
+                console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
+                console.log(this);
+                var fromnode = this.getNodeAt(params.pointer.DOM);
+                if (typeof nodes.get(fromnode).value != "undefined") {
+                    if (nodes.get(fromnode).title == 'Item') {
+                        callneptunegetneeds(nodes.get(fromnode).id, nodes, edges);
+                        callneptunegetdroppers(nodes.get(fromnode).id, nodes, edges);
+                    }
+                    if (nodes.get(fromnode).title == 'Player') {
+                        callneptunegetneeded(nodes.get(fromnode).id, nodes, edges);
+                    }
+                    if (nodes.get(fromnode).title == 'Profession') {
+                        callneptunegetcrafters(nodes.get(fromnode).id, nodes, edges);
+                    }
+                    if (nodes.get(fromnode).title == 'Boss') {
+                        callneptunegetdrops(nodes.get(fromnode).id, nodes, edges);
+                    }
+                }
+
+
+            });
+        }
+
+        function callneptunegetneeds(fromnode, nodes, edges) {
+            console.log('inside callneptunegetitems');
+            const data = JSON.stringify({ 'item_id': fromnode });
+            $.post(PROXY_API_URL + "/all_needs", data, function (data) {
+                console.log(data);
+                var resp = JSON.parse(JSON.stringify(data));
+                for (let i = 0; i < resp.length; i++) {
+                    console.log(resp[i].player_name)
+                    try {
+                        add_player_node(resp[i])
+                    }
+                    catch (e) {}
+                }
+                for (let j = 0; j < resp.length; j++) {
+                    try {
+                        edges.add({ id: fromnode + '' + resp[j].player_name, from: resp[j].player_name, to: fromnode, label: "", color: { color: 'grey' }, arrows: { to: { enabled: true } } });
+                    } //add an edge
+                    catch (e) {}
+                }
+            });
+        }
+
+        function callneptunegetneeded(fromnode, nodes, edges) {
+            console.log('inside callneptunegetitems');
+            $.post(PROXY_API_URL + "/needed?player_name=" + fromnode, function (data) {
+                console.log(data);
+                var resp = JSON.parse(JSON.stringify(data));
+                for (let i = 0; i < resp.length; i++) {
+                    console.log(resp[i].item_id)
+                    try {
+                        nodes.add({ id: resp[i].item_id, label: resp[i].name, value: resp[i].item_id, title: 'Item', color: 'purple', font: { color: 'white' } });                    }
+                    catch (e) { //if node is already added just continue
+                        console.log('clicked on the same node twice');
+                    }
+                }
+
+                for (let j = 0; j < resp.length; j++) {
+                    console.log('adding edges');
+                    console.log('from ' + resp[j].item_id + ' to ' + fromnode)
+                    try {
+                        edges.add({ id: resp[j].item_id + '' + fromnode, from: fromnode, to: resp[j].item_id, label: "needs", color: { color: 'grey' }, arrows: { to: { enabled: true } } });
+                    } //add an edge
+                    catch (e) {
+                    }
+                }
+            });
+        }
+        
+        function callneptunegetcrafters(fromnode, nodes, edges) {
+            const data = JSON.stringify({ 'node': fromnode });
+            $.post(PROXY_API_URL + "/crafters", data, function (data) {
+                var resp = JSON.parse(JSON.stringify(data));
+                for (let i = 0; i < resp.length; i++) {
+                    console.log(resp[i].player_name)
+                    try {
+                        add_player_node(resp[i])
+                        edges.add({ id: fromnode + resp[i].player_name, from: fromnode, to: resp[i].player_name, label: "", color: { color: 'grey' }, arrows: { to: { enabled: true } } });
+                    }
+                    catch (e) { //if node is already added just continue
+                        console.log(e);
+                    }
+                }
+            });
+        }
+
+        function callneptunegetdroppers(fromnode, nodes, edges) {
+           const data = JSON.stringify({ 'node': fromnode });
+            $.post(PROXY_API_URL + "/droppers", data, function (data) {
+                console.log(data)
+                var resp = JSON.parse(JSON.stringify(data));
+                for (let i = 0; i < resp.length; i++) {
+                    console.log(resp[i].name)
+                    try {
+                        add_boss_node(resp[i])
+                        edges.add({ id: resp[i].name + fromnode, from: resp[i].name, to: fromnode, label: "", color: { color: 'red' }, arrows: { to: { enabled: true } } });
+                    }
+                    catch (e) { //if node is already added just continue
+                    }
+                }
+            }); 
+        }
+
+        function callneptunegetdrops(fromnode, nodes, edges) {
+            console.log(fromnode)
+            const data = JSON.stringify({ 'boss_name': fromnode });
+            $.post(PROXY_API_URL + "/drops", data, function (data) {
+                console.log(data);
+                var resp = JSON.parse(JSON.stringify(data));
+
+                for (let j = 0; j < resp.length; j++) {
+                    try {
+                        console.log(resp[j])
+                        add_item_node(resp[j])
+                        edges.add({ id: fromnode + '' + resp[j].item_id, from: fromnode, to: resp[j].item_id, label: "", color: { color: 'purple' }, arrows: { to: { enabled: true } } });
+                    } //add an edge
+                    catch (e) {
+                        console.log('clicked on the same node twice');
+                    }
+                }
+            });
+        }
+        function add_item_node(node) {
+            try {
+                nodes.add({ id: node.item_id, label: node.name, value: node.name, title: 'Item', url: "https://vanillawowdb.com/?item="+node.item_id, color: 'purple', font: { color: 'white' } });
+            } catch (e) { console.log(e) }            
+        }
+        function add_boss_node(node) {
+            try {
+                nodes.add({ id: node.name, label: node.name, value: node.name, title: 'Boss', color: 'red', font: { color: 'white' } });
+            } catch (e) { console.log(e) }
+        }
+        function add_player_node(node) {
+            try {
+                nodes.add({ id: node.player_name, label: node.player_name, value: node.player_name, title: 'Player', color: 'grey', font: { color: 'white ' } });
+            } catch (e) { console.log(e) }
+            
+        }
+    </script>
+
+</head>
+
+<body>
+<h1>Visualize Zug Thugz data in Amazon Neptune using VIS.js library</h1>
+<div class="ui-widget">
+    <label for="items">Find Items: </label>
+    <input id="items">
+    <input type="submit" id="item-go" value="Go">
+</div>
+
+<div class="ui-widget">
+    <label for="players">Show Players: </label>
+    <input type="submit" id="player-go" value="Go">
+</div>
+
+<div class="ui-widget">
+    <label for="bosses">Show Bosses: </label>
+    <input type="submit" id="bosses-go" value="Go">
+</div>
+
+<div class="ui-widget">
+    <label for="professions">Show professions: </label>
+    <input type="submit" id="professions-go" value="Go">
+</div>
+
+<div id="mynetwork" ></div>
+
+</body></html>

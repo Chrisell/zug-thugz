@@ -7,6 +7,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Page from './Page.js'
+import Info from './Info.js'
 import Player from './Player.js'
 
 
@@ -14,6 +15,9 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/info">
+          <Info></Info>
+        </Route>
         <Route path="/player">
           <Player></Player>
         </Route>
