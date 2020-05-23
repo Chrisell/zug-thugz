@@ -5,7 +5,9 @@ import {
     Col,
     Row,
     Tab,
-    Tabs
+    Tabs,
+    Dropdown,
+    DropdownButton
 } from 'react-bootstrap'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
@@ -19,7 +21,7 @@ const postOptions = {
     method: 'post',
 };
 
-const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true}
+const defaultString = "------"
 
 function itemFormatter(cell, row) {
     var link = "https://vanillawowdb.com/?item=" + row.item_id
@@ -35,7 +37,10 @@ class Player extends React.Component {
             authenticated: false,
             isLoading: false,
             options: [],
-            new_item:[1]
+            new_item:[1],
+            race: defaultString,
+            class: defaultString,
+            spec: defaultString
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.addItemToNeedList = this.addItemToNeedList.bind(this);
@@ -43,106 +48,118 @@ class Player extends React.Component {
         this.fetchNeededItems = this.fetchNeededItems.bind(this);
     }
 
-    makeButton = (onClick, src) => {
+    makeDropdown = (onClick, text) => {
         return (
-            <Button variant="dark" onClick={() => this.setState(onClick)}><img src={src} /></Button>
+            <Dropdown.Item variant="dark" onClick={() => this.setState(onClick)}>{text}</Dropdown.Item>
         )
     }
 
-    getClasses = () => {
+    raceDropDown = () => {
+        return (
+            <DropdownButton variant="dark" id="raceDropDown" title={this.state.race}>
+                {this.makeDropdown({race: 'Orc', class: defaultString, spec: defaultString}, 'Orc')}
+                {this.makeDropdown({race: 'Tauren', class: defaultString, spec: defaultString}, 'Tauren')}
+                {this.makeDropdown({race: 'Troll', class: defaultString, spec: defaultString}, 'Troll')}
+                {this.makeDropdown({race: 'Undead', class: defaultString, spec: defaultString}, 'Undead')}
+            </DropdownButton>
+        )
+    }
+
+    classDropDown = () => {
         if (this.state.race === 'Orc') {
             return (
-                <div>
-                    {this.makeButton({class: 'Hunter', spec: 'DPS'}, classes.hunter)}
-                    {this.makeButton({class: 'Rogue', spec: 'DPS'}, classes.rogue)}
-                    {this.makeButton({class: 'Shaman', spec: ''}, classes.shaman)}
-                    {this.makeButton({class: 'Warlock', spec: 'DPS'}, classes.warlock)}
-                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
+                    {this.makeDropdown({class: 'Hunter', spec: 'DPS'}, 'Hunter')}
+                    {this.makeDropdown({class: 'Rogue', spec: 'DPS'}, 'Rogue')}
+                    {this.makeDropdown({class: 'Shaman', spec: defaultString}, 'Shaman')}
+                    {this.makeDropdown({class: 'Warlock', spec: 'DPS'}, 'Warlock')}
+                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
+                </DropdownButton>
             )
         } else if (this.state.race === 'Tauren') {
             return (
-                <div>
-                    {this.makeButton({class: 'Hunter', spec: 'DPS'}, classes.hunter)}
-                    {this.makeButton({class: 'Druid', spec: ''}, classes.druid)}
-                    {this.makeButton({class: 'Shaman', spec: ''}, classes.shaman)}
-                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
+                    {this.makeDropdown({class: 'Hunter', spec: 'DPS'}, 'Hunter')}
+                    {this.makeDropdown({class: 'Druid', spec: defaultString}, 'Druid')}
+                    {this.makeDropdown({class: 'Shaman', spec: defaultString}, 'Shaman')}
+                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
+                </DropdownButton>
             )
         } else if (this.state.race === 'Troll') {
             return (
-                <div>
-                    {this.makeButton({class: 'Hunter', spec: 'DPS'}, classes.hunter)}
-                    {this.makeButton({class: 'Mage', spec: 'DPS'}, classes.mage)}
-                    {this.makeButton({class: 'Priest', spec: ''}, classes.priest)}
-                    {this.makeButton({class: 'Rogue', spec: 'DPS'}, classes.rogue)}
-                    {this.makeButton({class: 'Shaman', spec: ''}, classes.shaman)}
-                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
+                    {this.makeDropdown({class: 'Hunter', spec: 'DPS'}, 'Hunter')}
+                    {this.makeDropdown({class: 'Mage', spec: 'DPS'}, 'Mage')}
+                    {this.makeDropdown({class: 'Priest', spec: defaultString}, 'Priest')}
+                    {this.makeDropdown({class: 'Rogue', spec: 'DPS'}, 'Rogue')}
+                    {this.makeDropdown({class: 'Shaman', spec: defaultString}, 'Shaman')}
+                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
+                </DropdownButton>
             )
         } else if (this.state.race === 'Undead') {
             return (
-                <div>
-                    {this.makeButton({class: 'Mage', spec: 'DPS'}, classes.mage)}
-                    {this.makeButton({class: 'Priest', spec: ''}, classes.priest)}
-                    {this.makeButton({class: 'Rogue', spec: 'DPS'}, classes.rogue)}
-                    {this.makeButton({class: 'Warlock', spec: 'DPS'}, classes.warlock)}
-                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
+                    {this.makeDropdown({class: 'Mage', spec: 'DPS'}, 'Mage')}
+                    {this.makeDropdown({class: 'Priest', spec: defaultString}, 'Priest')}
+                    {this.makeDropdown({class: 'Rogue', spec: 'DPS'}, 'Rogue')}
+                    {this.makeDropdown({class: 'Warlock', spec: 'DPS'}, 'Warlock')}
+                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
+                </DropdownButton>
             )
         }
+        return (
+            <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
+            </DropdownButton>
+        )
     }
 
-    getSpecs = () => {
+    specDropDown = () => {
         if (this.state.class === 'Druid') {
             return (
-                <div>
-                    {this.makeButton({spec: 'Balance'}, specs.balance)}
-                    {this.makeButton({spec: 'Bear'}, specs.bear)}
-                    {this.makeButton({spec: 'Feral'}, specs.feral)}
-                    {this.makeButton({spec: 'Restoration'}, specs.restoDruid)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
+                    {this.makeDropdown({spec: 'Balance'}, 'Balance')}
+                    {this.makeDropdown({spec: 'Bear'}, 'Bear')}
+                    {this.makeDropdown({spec: 'Feral'}, 'Feral')}
+                    {this.makeDropdown({spec: 'Restoration'}, 'Restoration')}
+                </DropdownButton>
             )
         } else if (this.state.class === 'Priest') {
             return (
-                <div>
-                    {this.makeButton({spec: 'Healer'}, classes.priest)}
-                    {this.makeButton({spec: 'Shadow'}, specs.shadow)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
+                    {this.makeDropdown({spec: 'Healer'}, 'Healer')}
+                    {this.makeDropdown({spec: 'Shadow'}, 'Shadow')}
+                </DropdownButton>
             )
         } else if (this.state.class === 'Shaman') {
             return (
-                <div>
-                    {this.makeButton({spec: 'Elemental'}, specs.elemental)}
-                    {this.makeButton({spec: 'Enhancement'}, specs.enhancement)}
-                    {this.makeButton({spec: 'Restoration'}, specs.restoShaman)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
+                    {this.makeDropdown({spec: 'Elemental'}, 'Elemental')}
+                    {this.makeDropdown({spec: 'Enhancement'}, 'Enhancement')}
+                    {this.makeDropdown({spec: 'Restoration'}, 'Restoration')}
+                </DropdownButton>
             )
         } else if (this.state.class === 'Warrior') {
             return (
-                <div>
-                    {this.makeButton({spec: 'Tank'}, specs.tank)}
-                    {this.makeButton({spec: 'DPS'}, classes.warrior)}
-                </div>
+                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
+                    {this.makeDropdown({spec: 'Tank'}, 'Tank')}
+                    {this.makeDropdown({spec: 'DPS'}, 'DPS')}
+                </DropdownButton>
             )
         }
+        return (
+            <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
+            </DropdownButton>
+        )
     }
 
     generalTab = () => {
         return (
             <Tab eventKey="general" title="general">
                 <h1>{this.state.player}</h1>
-                <div>
-                    {this.makeButton({race: 'Orc', class: '', spec: ''}, races.orc)}
-                    {this.makeButton({race: 'Tauren', class: '', spec: ''}, races.tauren)}
-                    {this.makeButton({race: 'Troll', class: '', spec: ''}, races.troll)}
-                    {this.makeButton({race: 'Undead', class: '', spec: ''}, races.undead)}
-                </div>
-                <p className="general">Race: {this.state.race}</p>
-                {this.getClasses()}
-                <p className="general">Class: {this.state.class}</p>
-                {this.getSpecs()}
-                <p className="general">Spec: {this.state.spec}</p>
+
+                <p className="general">Race: {this.raceDropDown()}</p>
+                <p className="general">Class: {this.classDropDown()}</p>
+                <p className="general">Spec: {this.specDropDown()}</p>
                 <p className="general">Info:</p>
                 <input type="text" value={this.state.value}/>
             </Tab>
