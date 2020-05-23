@@ -2,3 +2,34 @@
     max-width: 30%;
     margin: auto;
 }
+
+.general {
+    font-size: 3vw;
+    color: white;
+    margin-left: 3vw;
+}
+
+/************THIS DOESN'T WORK CURRENTLY************/
+/* Inactive tab */
+.tabs ul > li > a {
+    background-color: white;
+    color: red;
+}
+.tabs ul > li > a:hover {
+    background-color: pink;
+}
+
+/* Active tab */
+.tabs ul > li.active > a,
+.tabs ul > li.active > a:hover,
+.tabs ul > li.active > a:focus {
+    background-color: red;
+    color: white;
+}
+
+/* Disabled tab */
+.tabs ul > li.disabled > a {
+    background-color: lightgray;
+    color: darkgray;
+}
+/************THIS DOESN'T WORK CURRENTLY************/
