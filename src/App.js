@@ -29,6 +29,9 @@ function App() {
             <h1>Zug Thugz</h1>
             <div className="banner"></div>
             <h2>US - Benediction</h2>
+            <h2><a href="/info">info</a></h2>
+            <h2><a href="/#/player">player</a></h2>
+            <h2><a href="/#/items">items</a></h2>
           </div>
         </Route>
       </Switch>

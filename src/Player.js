@@ -29,110 +29,100 @@ function itemFormatter(cell, row) {
 }
 
 class Player extends React.Component {
-    onPress = () => {
-        this.setState({
-            race: 'Undead'
-        })
+    constructor(props) {
+        super(props);
+        this.state = {
+            authenticated: false,
+            isLoading: false,
+            options: [],
+            new_item:[1]
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.addItemToNeedList = this.addItemToNeedList.bind(this);
+        this.renderLoginForm = this.renderLoginForm.bind(this);
+        this.fetchNeededItems = this.fetchNeededItems.bind(this);
+    }
+
+    makeButton = (onClick, src) => {
+        return (
+            <Button variant="dark" onClick={() => this.setState(onClick)}><img src={src} /></Button>
+        )
     }
 
     getClasses = () => {
-        if (this.state.race == 'Orc') {
+        if (this.state.race === 'Orc') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Hunter'})}><img src={classes.hunter} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Rogue'})}><img src={classes.rogue} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Shaman'})}><img src={classes.shaman} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Warlock'})}><img src={classes.warlock} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Warrior'})}><img src={classes.warrior} /></Button>
+                    {this.makeButton({class: 'Hunter', spec: 'DPS'}, classes.hunter)}
+                    {this.makeButton({class: 'Rogue', spec: 'DPS'}, classes.rogue)}
+                    {this.makeButton({class: 'Shaman', spec: ''}, classes.shaman)}
+                    {this.makeButton({class: 'Warlock', spec: 'DPS'}, classes.warlock)}
+                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
                 </div>
             )
-        } else if (this.state.race == 'Tauren') {
+        } else if (this.state.race === 'Tauren') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Hunter'})}><img src={classes.hunter} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Druid'})}><img src={classes.druid} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Shaman'})}><img src={classes.shaman} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Warrior'})}><img src={classes.warrior} /></Button>
+                    {this.makeButton({class: 'Hunter', spec: 'DPS'}, classes.hunter)}
+                    {this.makeButton({class: 'Druid', spec: ''}, classes.druid)}
+                    {this.makeButton({class: 'Shaman', spec: ''}, classes.shaman)}
+                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
                 </div>
             )
-        } else if (this.state.race == 'Troll') {
+        } else if (this.state.race === 'Troll') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Hunter'})}><img src={classes.hunter} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Mage'})}><img src={classes.mage} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Priest'})}><img src={classes.priest} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Rogue'})}><img src={classes.rogue} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Shaman'})}><img src={classes.shaman} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Warrior'})}><img src={classes.warrior} /></Button>
+                    {this.makeButton({class: 'Hunter', spec: 'DPS'}, classes.hunter)}
+                    {this.makeButton({class: 'Mage', spec: 'DPS'}, classes.mage)}
+                    {this.makeButton({class: 'Priest', spec: ''}, classes.priest)}
+                    {this.makeButton({class: 'Rogue', spec: 'DPS'}, classes.rogue)}
+                    {this.makeButton({class: 'Shaman', spec: ''}, classes.shaman)}
+                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
                 </div>
             )
-        } else if (this.state.race == 'Undead') {
+        } else if (this.state.race === 'Undead') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Mage'})}><img src={classes.mage} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Priest'})}><img src={classes.priest} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Rogue'})}><img src={classes.rogue} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Warlock'})}><img src={classes.warlock} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({class: 'Warrior'})}><img src={classes.warrior} /></Button>
+                    {this.makeButton({class: 'Mage', spec: 'DPS'}, classes.mage)}
+                    {this.makeButton({class: 'Priest', spec: ''}, classes.priest)}
+                    {this.makeButton({class: 'Rogue', spec: 'DPS'}, classes.rogue)}
+                    {this.makeButton({class: 'Warlock', spec: 'DPS'}, classes.warlock)}
+                    {this.makeButton({class: 'Warrior', spec: ''}, classes.warrior)}
                 </div>
             )
         }
     }
 
     getSpecs = () => {
-        if (this.state.class == 'Druid') {
+        if (this.state.class === 'Druid') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Balance'})}><img src={specs.balance} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Bear'})}><img src={specs.bear} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Feral'})}><img src={specs.feral} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Restoration'})}><img src={specs.restoDruid} /></Button>
+                    {this.makeButton({spec: 'Balance'}, specs.balance)}
+                    {this.makeButton({spec: 'Bear'}, specs.bear)}
+                    {this.makeButton({spec: 'Feral'}, specs.feral)}
+                    {this.makeButton({spec: 'Restoration'}, specs.restoDruid)}
                 </div>
             )
-        } else if (this.state.class == 'Hunter') {
+        } else if (this.state.class === 'Priest') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'DPS'})}><img src={classes.hunter} /></Button>
+                    {this.makeButton({spec: 'Healer'}, classes.priest)}
+                    {this.makeButton({spec: 'Shadow'}, specs.shadow)}
                 </div>
             )
-        } else if (this.state.class == 'Mage') {
+        } else if (this.state.class === 'Shaman') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'DPS'})}><img src={classes.mage} /></Button>
+                    {this.makeButton({spec: 'Elemental'}, specs.elemental)}
+                    {this.makeButton({spec: 'Enhancement'}, specs.enhancement)}
+                    {this.makeButton({spec: 'Restoration'}, specs.restoShaman)}
                 </div>
             )
-        } else if (this.state.class == 'Priest') {
+        } else if (this.state.class === 'Warrior') {
             return (
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Healer'})}><img src={classes.priest} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Shadow'})}><img src={specs.shadow} /></Button>
-                </div>
-            )
-        } else if (this.state.class == 'Rogue') {
-            return (
-                <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'DPS'})}><img src={classes.rogue} /></Button>
-                </div>
-            )
-        } else if (this.state.class == 'Shaman') {
-            return (
-                <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Elemental'})}><img src={specs.elemental} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Enhancement'})}><img src={specs.enhancement} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Restoration'})}><img src={specs.restoShaman} /></Button>
-                </div>
-            )
-        } else if (this.state.class == 'Warlock') {
-            return (
-                <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'DPS'})}><img src={classes.warlock} /></Button>
-                </div>
-            )
-        } else if (this.state.class == 'Warrior') {
-            return (
-                <div>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'Tank'})}><img src={specs.tank} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({spec: 'DPS'})}><img src={classes.warrior} /></Button>
+                    {this.makeButton({spec: 'Tank'}, specs.tank)}
+                    {this.makeButton({spec: 'DPS'}, classes.warrior)}
                 </div>
             )
         }
@@ -143,10 +133,10 @@ class Player extends React.Component {
             <Tab eventKey="general" title="general">
                 <h1>{this.state.player}</h1>
                 <div>
-                    <Button variant="dark" onClick={() => this.setState({race: 'Orc'})}><img src={races.orc} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({race: 'Tauren'})}><img src={races.tauren} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({race: 'Troll'})}><img src={races.troll} /></Button>
-                    <Button variant="dark" onClick={() => this.setState({race: 'Undead'})}><img src={races.undead} /></Button>
+                    {this.makeButton({race: 'Orc', class: '', spec: ''}, races.orc)}
+                    {this.makeButton({race: 'Tauren', class: '', spec: ''}, races.tauren)}
+                    {this.makeButton({race: 'Troll', class: '', spec: ''}, races.troll)}
+                    {this.makeButton({race: 'Undead', class: '', spec: ''}, races.undead)}
                 </div>
                 <p className="general">Race: {this.state.race}</p>
                 {this.getClasses()}
@@ -192,19 +182,6 @@ class Player extends React.Component {
         )
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            authenticated: false,
-            isLoading: false,
-            options: [],
-            new_item:[1]
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.addItemToNeedList = this.addItemToNeedList.bind(this);
-        this.renderLoginForm = this.renderLoginForm.bind(this);
-        this.fetchNeededItems = this.fetchNeededItems.bind(this);
-    }
     fetchNeededItems = (item_id) => {
         console.log('needed')
         fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/all_needs`, {
