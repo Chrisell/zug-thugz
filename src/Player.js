@@ -160,8 +160,7 @@ class Player extends React.Component {
                 <p className="general">Race: {this.raceDropDown()}</p>
                 <p className="general">Class: {this.classDropDown()}</p>
                 <p className="general">Spec: {this.specDropDown()}</p>
-                <p className="general">Info:</p>
-                <input type="text" value={this.state.value}/>
+                <p className="general">Note:<br></br><textarea className="note" type="text" rows="6" cols="100" value={this.state.value}/></p>
             </Tab>
         )
     }

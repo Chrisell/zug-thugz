@@ -6,10 +6,15 @@
 .general {
     font-size: 3vw;
     color: white;
-    margin-left: 3vw;
+    margin: 3vw;
 }
 
-/************THIS DOESN'T WORK CURRENTLY************/
+.note {
+    font-size: 2vw;
+    color: black;
+}
+
+/************THIS DOESN'T WORK CURRENTLY: https://codepen.io/tchaffee/pen/yMmywz************/
 /* Inactive tab */
 .tabs ul > li > a {
     background-color: white;
