@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Form,
     Button,
@@ -10,7 +10,7 @@ import {
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory from 'react-bootstrap-table2-filter'
-import {raceDropDown, classDropDown, specDropDown} from "./utils/Player"
+import {raceDropDown, classDropDown, specDropDown} from "./utils/PlayerDropdowns"
 
 import './Player.css'
 const postOptions = {
