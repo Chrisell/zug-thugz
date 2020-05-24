@@ -6,7 +6,7 @@
 .general {
     font-size: 3vw;
     color: white;
-    margin: 3vw;
+    margin-left: 1vw;
 }
 
 .note {
@@ -14,27 +14,27 @@
     color: black;
 }
 
-/************THIS DOESN'T WORK CURRENTLY: https://codepen.io/tchaffee/pen/yMmywz************/
-/* Inactive tab */
-.tabs ul > li > a {
-    background-color: white;
-    color: red;
+/* Inactive tabs */
+.tabs a:defined {
+    background-color: darkblue;
+    color: white;
+    font-size: 2vw;
+    width: 50%;
+    text-align: center;
 }
-.tabs ul > li > a:hover {
-    background-color: pink;
+.tabs a:hover {
+    background-color: blue;
+    color: white;
+    font-size: 2vw;
+    width: 50%;
+    text-align: center;
 }
 
 /* Active tab */
-.tabs ul > li.active > a,
-.tabs ul > li.active > a:hover,
-.tabs ul > li.active > a:focus {
-    background-color: red;
-    color: white;
+.tabs a.active:defined {
+    background-color: white;
+    color: darkblue;
+    font-size: 2vw;
+    width: 50%;
+    text-align: center;
 }
-
-/* Disabled tab */
-.tabs ul > li.disabled > a {
-    background-color: lightgray;
-    color: darkgray;
-}
-/************THIS DOESN'T WORK CURRENTLY************/

@@ -5,16 +5,12 @@ import {
     Col,
     Row,
     Tab,
-    Tabs,
-    Dropdown,
-    DropdownButton
+    Tabs
 } from 'react-bootstrap'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory from 'react-bootstrap-table2-filter'
-import * as races from './img/races'
-import * as classes from './img/classes'
-import * as specs from './img/specs'
+import {raceDropDown, classDropDown, specDropDown} from "./utils/Player"
 
 import './Player.css'
 const postOptions = {
@@ -38,6 +34,7 @@ class Player extends React.Component {
             isLoading: false,
             options: [],
             new_item:[1],
+            defaultString: defaultString,
             race: defaultString,
             class: defaultString,
             spec: defaultString
@@ -48,119 +45,26 @@ class Player extends React.Component {
         this.fetchNeededItems = this.fetchNeededItems.bind(this);
     }
 
-    makeDropdown = (onClick, text) => {
-        return (
-            <Dropdown.Item variant="dark" onClick={() => this.setState(onClick)}>{text}</Dropdown.Item>
-        )
-    }
-
-    raceDropDown = () => {
-        return (
-            <DropdownButton variant="dark" id="raceDropDown" title={this.state.race}>
-                {this.makeDropdown({race: 'Orc', class: defaultString, spec: defaultString}, 'Orc')}
-                {this.makeDropdown({race: 'Tauren', class: defaultString, spec: defaultString}, 'Tauren')}
-                {this.makeDropdown({race: 'Troll', class: defaultString, spec: defaultString}, 'Troll')}
-                {this.makeDropdown({race: 'Undead', class: defaultString, spec: defaultString}, 'Undead')}
-            </DropdownButton>
-        )
-    }
-
-    classDropDown = () => {
-        if (this.state.race === 'Orc') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
-                    {this.makeDropdown({class: 'Hunter', spec: 'DPS'}, 'Hunter')}
-                    {this.makeDropdown({class: 'Rogue', spec: 'DPS'}, 'Rogue')}
-                    {this.makeDropdown({class: 'Shaman', spec: defaultString}, 'Shaman')}
-                    {this.makeDropdown({class: 'Warlock', spec: 'DPS'}, 'Warlock')}
-                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
-                </DropdownButton>
-            )
-        } else if (this.state.race === 'Tauren') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
-                    {this.makeDropdown({class: 'Hunter', spec: 'DPS'}, 'Hunter')}
-                    {this.makeDropdown({class: 'Druid', spec: defaultString}, 'Druid')}
-                    {this.makeDropdown({class: 'Shaman', spec: defaultString}, 'Shaman')}
-                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
-                </DropdownButton>
-            )
-        } else if (this.state.race === 'Troll') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
-                    {this.makeDropdown({class: 'Hunter', spec: 'DPS'}, 'Hunter')}
-                    {this.makeDropdown({class: 'Mage', spec: 'DPS'}, 'Mage')}
-                    {this.makeDropdown({class: 'Priest', spec: defaultString}, 'Priest')}
-                    {this.makeDropdown({class: 'Rogue', spec: 'DPS'}, 'Rogue')}
-                    {this.makeDropdown({class: 'Shaman', spec: defaultString}, 'Shaman')}
-                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
-                </DropdownButton>
-            )
-        } else if (this.state.race === 'Undead') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
-                    {this.makeDropdown({class: 'Mage', spec: 'DPS'}, 'Mage')}
-                    {this.makeDropdown({class: 'Priest', spec: defaultString}, 'Priest')}
-                    {this.makeDropdown({class: 'Rogue', spec: 'DPS'}, 'Rogue')}
-                    {this.makeDropdown({class: 'Warlock', spec: 'DPS'}, 'Warlock')}
-                    {this.makeDropdown({class: 'Warrior', spec: defaultString}, 'Warrior')}
-                </DropdownButton>
-            )
-        }
-        return (
-            <DropdownButton variant="dark" id="classDropDown" title={this.state.class}>
-            </DropdownButton>
-        )
-    }
-
-    specDropDown = () => {
-        if (this.state.class === 'Druid') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
-                    {this.makeDropdown({spec: 'Balance'}, 'Balance')}
-                    {this.makeDropdown({spec: 'Bear'}, 'Bear')}
-                    {this.makeDropdown({spec: 'Feral'}, 'Feral')}
-                    {this.makeDropdown({spec: 'Restoration'}, 'Restoration')}
-                </DropdownButton>
-            )
-        } else if (this.state.class === 'Priest') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
-                    {this.makeDropdown({spec: 'Healer'}, 'Healer')}
-                    {this.makeDropdown({spec: 'Shadow'}, 'Shadow')}
-                </DropdownButton>
-            )
-        } else if (this.state.class === 'Shaman') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
-                    {this.makeDropdown({spec: 'Elemental'}, 'Elemental')}
-                    {this.makeDropdown({spec: 'Enhancement'}, 'Enhancement')}
-                    {this.makeDropdown({spec: 'Restoration'}, 'Restoration')}
-                </DropdownButton>
-            )
-        } else if (this.state.class === 'Warrior') {
-            return (
-                <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
-                    {this.makeDropdown({spec: 'Tank'}, 'Tank')}
-                    {this.makeDropdown({spec: 'DPS'}, 'DPS')}
-                </DropdownButton>
-            )
-        }
-        return (
-            <DropdownButton variant="dark" id="classDropDown" title={this.state.spec}>
-            </DropdownButton>
-        )
-    }
-
     generalTab = () => {
         return (
             <Tab eventKey="general" title="general">
                 <h1>{this.state.player}</h1>
 
-                <p className="general">Race: {this.raceDropDown()}</p>
-                <p className="general">Class: {this.classDropDown()}</p>
-                <p className="general">Spec: {this.specDropDown()}</p>
-                <p className="general">Note:<br></br><textarea className="note" type="text" rows="6" cols="100" value={this.state.value}/></p>
+                <div class="row">
+                    <label className="general">Race:</label>
+                    {raceDropDown(this)}
+                </div>
+                <div class="row">
+                    <p className="general">Class:</p>
+                    {classDropDown(this)}
+                </div>
+                <div class="row">
+                    <p className="general">Spec:</p>
+                    {specDropDown(this)}
+                </div>
+                <div class="row">
+                    <p className="general">Note:<br></br><textarea wrap="hard" className="note" type="text" rows="3" cols="50" value={this.state.value}/></p>
+                </div>
             </Tab>
         )
     }
@@ -319,12 +223,10 @@ class Player extends React.Component {
             }
         ];
         return (
-            <div>
-                <Tabs className="tabs" defaultActiveKey="general" transition={false} id="player-tabs">
-                    {this.generalTab()}
-                    {this.wishListTab(columns)}
-                </Tabs>
-            </div>            
+            <Tabs variant="pills" className="tabs" defaultActiveKey="general" transition={false} id="player-tabs">
+                {this.generalTab()}
+                {this.wishListTab(columns)}
+            </Tabs>
         )
     }
 
