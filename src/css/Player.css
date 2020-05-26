@@ -16,25 +16,22 @@
 
 /* Inactive tabs */
 .tabs a:defined {
-    background-color: darkblue;
+    background-color: grey;
     color: white;
     font-size: 2vw;
-    width: 50%;
     text-align: center;
 }
 .tabs a:hover {
-    background-color: blue;
+    background-color: lightgrey;
     color: white;
     font-size: 2vw;
-    width: 50%;
     text-align: center;
 }
 
 /* Active tab */
 .tabs a.active:defined {
     background-color: white;
-    color: darkblue;
+    color: black;
     font-size: 2vw;
-    width: 50%;
     text-align: center;
 }

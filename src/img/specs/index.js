@@ -27,17 +27,17 @@ import restoShaman from './restoShaman.png'
 import tank from './tank.png'
 
 // druid
-const Balance = <img id='Balance' src={balance}/>
-const Feral = <img id='Feral' src={feral}/>
-const Bear = <img id='Bear' src={bear}/>
-const RestoDruid = <img id='RestoDruid' src={restoDruid}/>
+const Balance = {name: 'Balance', img: <img src={balance}/>}
+const Feral = {name: 'Feral', img: <img src={feral}/>}
+const Bear = {name: 'Bear', img: <img src={bear}/>}
+const RestoDruid = {name: 'RestoDruid', img: <img src={restoDruid}/>}
 // priest
-const Shadow = <img id='Shadow' src={shadow}/>
+const Shadow = {name: 'Shadow', img: <img src={shadow}/>}
 // shaman
-const Elemental = <img id='Elemental' src={elemental}/>
-const Enhancement = <img id='Enhancement' src={enhancement}/>
-const RestoShaman = <img id='RestoShaman' src={restoShaman}/>
+const Elemental = {name: 'Elemental', img: <img src={elemental}/>}
+const Enhancement = {name: 'Enhancement', img: <img src={enhancement}/>}
+const RestoShaman = {name: 'RestoShaman', img: <img src={restoShaman}/>}
 // warrior
-const Tank = <img id='Tank' src={tank}/>
+const Tank = {name: 'Tank', img: <img src={tank}/>}
 
 export {Balance, Feral, Bear, RestoDruid, Shadow, Elemental, Enhancement, RestoShaman, Tank}

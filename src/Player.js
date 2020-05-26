@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
     Form,
     Button,
@@ -10,14 +10,12 @@ import {
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory from 'react-bootstrap-table2-filter'
-import {raceDropDown, classDropDown, specDropDown} from "./utils/PlayerDropdowns"
+import {raceDropDown, classDropDown, specDropDown, rankDropDown} from "./utils/PlayerDropdowns"
 
-import './Player.css'
+import './css/Player.css'
 const postOptions = {
     method: 'post',
 };
-
-const defaultString = "------"
 
 function itemFormatter(cell, row) {
     var link = "https://vanillawowdb.com/?item=" + row.item_id
@@ -27,17 +25,15 @@ function itemFormatter(cell, row) {
 }
 
 class Player extends React.Component {
+    // name, race, class, spec, rank.
     constructor(props) {
         super(props);
         this.state = {
+            name: "",
             authenticated: false,
             isLoading: false,
             options: [],
-            new_item:[1],
-            defaultString: defaultString,
-            race: defaultString,
-            class: defaultString,
-            spec: defaultString
+            new_item:[1]
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.addItemToNeedList = this.addItemToNeedList.bind(this);
@@ -48,8 +44,6 @@ class Player extends React.Component {
     generalTab = () => {
         return (
             <Tab eventKey="general" title="general">
-                <h1>{this.state.player}</h1>
-
                 <div class="row">
                     <label className="general">Race:</label>
                     {raceDropDown(this)}
@@ -63,6 +57,10 @@ class Player extends React.Component {
                     {specDropDown(this)}
                 </div>
                 <div class="row">
+                    <p className="general">Rank:</p>
+                    {rankDropDown(this)}
+                </div>
+                <div class="row">
                     <p className="general">Note:<br></br><textarea wrap="hard" className="note" type="text" rows="3" cols="50" value={this.state.value}/></p>
                 </div>
             </Tab>
@@ -72,7 +70,6 @@ class Player extends React.Component {
     wishListTab = (columns) => {
         return (
             <Tab eventKey="wish list" title="wish list">
-                <h1>{this.state.player}</h1>
                 <React.Fragment>
                 <Row className="justify-content-md-center">
                     <Col lg="4">
@@ -122,7 +119,7 @@ class Player extends React.Component {
             )
     }
     addItemToNeedList = () => {
-        const player_name = this.state.player
+        const player_name = this.state.name
         const new_item = this.state.new_item[0]
         console.log(new_item)
         fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/add_needed_item`, {
@@ -159,7 +156,7 @@ class Player extends React.Component {
                     this.setState({
                         authenticated: true,
                         needed_items: result,
-                        player: player_name,
+                        name: player_name,
                         options: []
                     })
                 },
@@ -223,10 +220,13 @@ class Player extends React.Component {
             }
         ];
         return (
-            <Tabs variant="pills" className="tabs" defaultActiveKey="general" transition={false} id="player-tabs">
-                {this.generalTab()}
-                {this.wishListTab(columns)}
-            </Tabs>
+            <div>
+                <h1>{this.state.name}</h1>
+                <Tabs variant="pills" className="tabs" defaultActiveKey="general" transition={false} id="player-tabs">
+                    {this.generalTab()}
+                    {this.wishListTab(columns)}
+                </Tabs>
+            </div>
         )
     }
 

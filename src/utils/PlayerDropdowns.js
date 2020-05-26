@@ -1,13 +1,36 @@
 import React, {useState} from 'react';
 import {
-    Dropdown,
-    DropdownButton,
-    Nav,
-    FormControl
+    Dropdown
 } from 'react-bootstrap'
-import * as races from "../img/races"
-import * as classes from "../img/classes"
-import * as specs from "../img/specs"
+import {Orc, Tauren, Troll, Undead} from "../img/races"
+import {Druid, Hunter, Mage, Priest, Rogue, Shaman, Warlock, Warrior} from "../img/classes"
+import {Balance, Feral, Bear, RestoDruid, Shadow, Elemental, Enhancement, RestoShaman, Tank} from "../img/specs"
+import Player from '../Player';
+
+const defaultString = "------"
+
+const stateMap = {Orc: {race: Orc, class: defaultString, spec: defaultString},
+    Tauren: {race: Tauren, class: defaultString, spec: defaultString},
+    Troll: {race: Troll, class: defaultString, spec: defaultString},
+    Undead: {race: Undead, class: defaultString, spec: defaultString},
+    Druid:  {class: Druid, spec: defaultString},
+    Hunter: {class: Hunter, spec: Hunter},
+    Mage: {class: Mage, spec: Mage},
+    Priest: {class: Priest, spec: defaultString},
+    Rogue: {class: Rogue, spec: Rogue},
+    Shaman: {class: Shaman, spec: defaultString},
+    Warlock: {class: Warlock, spec: Warlock},
+    Warrior: {class: Warrior, spec: defaultString},
+    Balance: {spec: Balance},
+    Feral: {spec: Feral},
+    Bear: {spec: Bear},
+    RestoDruid: {spec: RestoDruid},
+    Shadow: {spec: Shadow},
+    Elemental: {spec: Elemental},
+    Enhancement: {spec: Enhancement},
+    RestoShaman: {spec: RestoShaman},
+    Tank: {spec: Tank}
+}
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
@@ -55,163 +78,89 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     },
   );
 
-function makeDropdown(thisObj, onClick, text) {
+function makeDropdown(thisObj, id, icon, items) {
+    let renderedItems = []
+    items = items ? items : []
+    icon = icon ? icon : defaultString
+    if (typeof icon === 'object') {
+        icon = icon.img
+    }
+    items.forEach(function (item) {
+        if (stateMap[item.name]) {
+          item = stateMap[item.name]
+          let demographic = item.spec
+          if (item.race) {
+              demographic = item.race
+          } else if (item.class) {
+              demographic = item.class
+          }
+          renderedItems.push(
+            <Dropdown.Item variant="dark" onClick={() => thisObj.setState(item)}>{demographic.img}<p>{demographic.name}</p></Dropdown.Item>
+          )
+        } else {
+          renderedItems.push(
+            <Dropdown.Item variant="dark" onClick={() => thisObj.setState({rank: item})}>{item}</Dropdown.Item>
+          )
+        }
+    })
     return (
-        <Dropdown.Item variant="dark" onClick={() => thisObj.setState(onClick)}>{text}<p>{text.props.id}</p></Dropdown.Item>
+        <Dropdown>
+            <Dropdown.Toggle as={CustomToggle} id={id}>
+                {icon}
+            </Dropdown.Toggle>
+            <Dropdown.Menu as={CustomMenu}>
+                {renderedItems}
+            </Dropdown.Menu>
+        </Dropdown>
     )
+}
+
+function makeDemographic() {
+
 }
 
 function raceDropDown(thisObj) {
-    return (
-        <Dropdown>
-            <Dropdown.Toggle as={CustomToggle} id="raceDropDown">
-                {thisObj.state.race}
-            </Dropdown.Toggle>
-            <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {race: races.Orc, class: thisObj.state.defaultString, spec: thisObj.state.defaultString}, races.Orc)}
-                {makeDropdown(thisObj, {race: races.Tauren, class: thisObj.state.defaultString, spec: thisObj.state.defaultString}, races.Tauren)}
-                {makeDropdown(thisObj, {race: races.Troll, class: thisObj.state.defaultString, spec: thisObj.state.defaultString}, races.Troll)}
-                {makeDropdown(thisObj, {race: races.Undead, class: thisObj.state.defaultString, spec: thisObj.state.defaultString}, races.Undead)}
-            </Dropdown.Menu>
-        </Dropdown>
-    )
+    let races = [Orc, Tauren, Troll, Undead]
+    return makeDropdown(thisObj, "raceDropDown", thisObj.state.race, races)
 }
 
 function classDropDown(thisObj) {
-    if (thisObj.state.race === races.Orc) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="classDropDown">
-                    {thisObj.state.class}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                    {makeDropdown(thisObj, {class: classes.Hunter, spec: classes.Hunter}, classes.Hunter)}
-                    {makeDropdown(thisObj, {class: classes.Rogue, spec: classes.Rogue}, classes.Rogue)}
-                    {makeDropdown(thisObj, {class: classes.Shaman, spec: thisObj.state.defaultString}, classes.Shaman)}
-                    {makeDropdown(thisObj, {class: classes.Warlock, spec: classes.Warlock}, classes.Warlock)}
-                    {makeDropdown(thisObj, {class: classes.Warrior, spec: thisObj.state.defaultString}, classes.Warrior)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    } else if (thisObj.state.race === races.Tauren) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="classDropDown">
-                    {thisObj.state.class}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {class: classes.Hunter, spec: classes.Hunter}, classes.Hunter)}
-                {makeDropdown(thisObj, {class: classes.Druid, spec: thisObj.state.defaultString}, classes.Druid)}
-                {makeDropdown(thisObj, {class: classes.Shaman, spec: thisObj.state.defaultString}, classes.Shaman)}
-                {makeDropdown(thisObj, {class: classes.Warrior, spec: thisObj.state.defaultString}, classes.Warrior)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    } else if (thisObj.state.race === races.Troll) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="classDropDown">
-                    {thisObj.state.class}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {class: classes.Hunter, spec: classes.Hunter}, classes.Hunter)}
-                {makeDropdown(thisObj, {class: classes.Mage, spec: classes.Mage}, classes.Mage)}
-                {makeDropdown(thisObj, {class: classes.Priest, spec: thisObj.state.defaultString}, classes.Priest)}
-                {makeDropdown(thisObj, {class: classes.Rogue, spec: classes.Rogue}, classes.Rogue)}
-                {makeDropdown(thisObj, {class: classes.Shaman, spec: thisObj.state.defaultString}, classes.Shaman)}
-                {makeDropdown(thisObj, {class: classes.Warrior, spec: thisObj.state.defaultString}, classes.Warrior)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    } else if (thisObj.state.race === races.Undead) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="classDropDown">
-                    {thisObj.state.class}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {class: classes.Mage, spec: classes.Mage}, classes.Mage)}
-                {makeDropdown(thisObj, {class: classes.Priest, spec: thisObj.state.defaultString}, classes.Priest)}
-                {makeDropdown(thisObj, {class: classes.Rogue, spec: classes.Rogue}, classes.Rogue)}
-                {makeDropdown(thisObj, {class: classes.Warlock, spec: classes.Warlock}, classes.Warlock)}
-                {makeDropdown(thisObj, {class: classes.Warrior, spec: thisObj.state.defaultString}, classes.Warrior)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
+    if (thisObj.state.race === Orc) {
+        let classes = [Hunter, Rogue, Shaman, Warlock, Warrior]
+        return (makeDropdown(thisObj, "classDropDown", thisObj.state.class, classes))
+    } else if (thisObj.state.race === Tauren) {
+        let classes = [Hunter, Druid, Shaman, Warrior]
+        return (makeDropdown(thisObj, "classDropDown", thisObj.state.class, classes))
+    } else if (thisObj.state.race === Troll) {
+        let classes = [Hunter, Mage, Priest, Rogue, Shaman, Warrior]
+        return (makeDropdown(thisObj, "classDropDown", thisObj.state.class, classes))
+    } else if (thisObj.state.race === Undead) {
+        let classes = [Mage, Priest, Rogue, Warlock, Warrior]
+        return (makeDropdown(thisObj, "classDropDown", thisObj.state.class, classes))
     }
-    return (
-        <Dropdown>
-            <Dropdown.Toggle as={CustomToggle} id="classDropDown">
-                {thisObj.state.class}
-            </Dropdown.Toggle>
-            <Dropdown.Menu as={CustomMenu}>
-            </Dropdown.Menu>
-        </Dropdown>
-    )
+    return (makeDropdown(thisObj, "classDropDown", thisObj.state.class))
 }
 
 function specDropDown(thisObj) {
-    if (thisObj.state.class === classes.Druid) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="specDropDown">
-                    {thisObj.state.spec}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {spec: specs.Balance}, specs.Balance)}
-                {makeDropdown(thisObj, {spec: specs.Bear}, specs.Bear)}
-                {makeDropdown(thisObj, {spec: specs.Feral}, specs.Feral)}
-                {makeDropdown(thisObj, {spec: specs.RestoDruid}, specs.RestoDruid)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    } else if (thisObj.state.class === classes.Priest) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="specDropDown">
-                    {thisObj.state.spec}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {spec: classes.Priest}, classes.Priest)}
-                {makeDropdown(thisObj, {spec: specs.Shadow}, specs.Shadow)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    } else if (thisObj.state.class === classes.Shaman) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="specDropDown">
-                    {thisObj.state.spec}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {spec: specs.Elemental}, specs.Elemental)}
-                {makeDropdown(thisObj, {spec: specs.Enhancement}, specs.Enhancement)}
-                {makeDropdown(thisObj, {spec: specs.RestoShaman}, specs.RestoShaman)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
-    } else if (thisObj.state.class === classes.Warrior) {
-        return (
-            <Dropdown>
-                <Dropdown.Toggle as={CustomToggle} id="specDropDown">
-                    {thisObj.state.spec}
-                </Dropdown.Toggle>
-                <Dropdown.Menu as={CustomMenu}>
-                {makeDropdown(thisObj, {spec: specs.Tank}, specs.Tank)}
-                {makeDropdown(thisObj, {spec: classes.Warrior}, classes.Warrior)}
-                </Dropdown.Menu>
-            </Dropdown>
-        )
+    if (thisObj.state.class === Druid) {
+        let specs = [Balance, Bear, Feral, RestoDruid]
+        return (makeDropdown(thisObj, "specDropDown", thisObj.state.spec, specs))
+    } else if (thisObj.state.class === Priest) {
+        let specs = [Priest, Shadow]
+        return (makeDropdown(thisObj, "specDropDown", thisObj.state.spec, specs))
+    } else if (thisObj.state.class === Shaman) {
+        let specs = [Elemental, Enhancement, RestoShaman]
+        return (makeDropdown(thisObj, "specDropDown", thisObj.state.spec, specs))
+    } else if (thisObj.state.class === Warrior) {
+        let specs = [Tank, Warrior]
+        return (makeDropdown(thisObj, "specDropDown", thisObj.state.spec, specs))
     }
-    return (
-        <Dropdown>
-            <Dropdown.Toggle as={CustomToggle} id="specDropDown">
-                {thisObj.state.spec}
-            </Dropdown.Toggle>
-            <Dropdown.Menu as={CustomMenu}>
-            </Dropdown.Menu>
-        </Dropdown>
-    )
+    return (makeDropdown(thisObj, "specDropDown", thisObj.state.spec))
 }
 
-export {raceDropDown, classDropDown, specDropDown}
+function rankDropDown(thisObj) {
+  let ranks = ['Zug Boi', 'Zug Grunt', 'Zug Thug', 'Core Zug', 'Zug Lord', 'Zug Supreme']
+  return (makeDropdown(thisObj, "rankDropDown", thisObj.state.rank, ranks))
+}
+
+export {raceDropDown, classDropDown, specDropDown, rankDropDown}

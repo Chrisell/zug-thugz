@@ -1,5 +1,5 @@
 import React from 'react';
-import './Page.css'
+import './css/Page.css'
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 

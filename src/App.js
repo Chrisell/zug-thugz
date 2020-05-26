@@ -5,38 +5,47 @@ import {
   Route,
 } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
+import './css/App.css'
 import Page from './Page.js'
 import Info from './Info.js'
 import Player from './Player.js'
+import Players from './Players.js'
+import Spreadsheets from "./Spreadsheets.js"
+import Home from './Home.js'
 
 
-function App() {
+const tags = [
+  {cls: <Info></Info>, link: "/info", name: "info"},
+  {cls: <Player></Player>, link: "/player", name: "player"},
+  {cls: <Players></Players>, link: "/players", name: "players"},
+  {cls: <Page title="Items"></Page>, link: "/items", name: "items"},
+  {cls: <Spreadsheets></Spreadsheets>, link: "/spreadsheets", name: "spreadsheets"},
+  {cls: <Home></Home>, link: "/", name: "home"}
+]
+
+function generateLinks() {
+  let links = []
+  tags.forEach(function (tag) {
+    links.push(
+      <Route path={tag.link}>
+        {tag.cls}
+      </Route>
+    )
+  })
   return (
     <Router>
       <Switch>
-        <Route path="/info">
-          <Info></Info>
-        </Route>
-        <Route path="/player">
-          <Player></Player>
-        </Route>
-        <Route path="/items">
-          <Page title="Items"></Page>
-        </Route>
-        <Route path="/">
-          <div className="center">
-            <h1>Zug Thugz</h1>
-            <div className="banner"></div>
-            <h2>US - Benediction</h2>
-            <h2><a href="/info">info</a></h2>
-            <h2><a href="/#/player">player</a></h2>
-            <h2><a href="/#/items">items</a></h2>
-          </div>
-        </Route>
+        {links}
       </Switch>
     </Router>
+  )
+}
+
+function App() {
+  return (
+    generateLinks()
   );
 }
 
 export default App;
+export {tags};
