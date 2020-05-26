@@ -16,13 +16,13 @@ import shaman from "./shaman.png"
 import warlock from "./warlock.png"
 import warrior from "./warrior.png"
 
-const Druid = {name: 'Druid', img: <img src={druid}/>}
-const Hunter = {name: 'Hunter', img: <img src={hunter}/>}
-const Mage = {name: 'Mage', img: <img src={mage}/>}
-const Priest = {name: 'Priest', img: <img src={priest}/>}
-const Rogue = {name: 'Rogue', img: <img src={rogue}/>}
-const Shaman = {name: 'Shaman', img: <img src={shaman}/>}
-const Warlock = {name: 'Warlock', img: <img src={warlock}/>}
-const Warrior = {name: 'Warrior', img: <img src={warrior}/>}
+const Druid = {name: 'Druid', img: <img alt="Druid" src={druid}/>}
+const Hunter = {name: 'Hunter', img: <img alt="Hunter" src={hunter}/>}
+const Mage = {name: 'Mage', img: <img alt="Mage" src={mage}/>}
+const Priest = {name: 'Priest', img: <img alt="Priest" src={priest}/>}
+const Rogue = {name: 'Rogue', img: <img alt="Rogue" src={rogue}/>}
+const Shaman = {name: 'Shaman', img: <img alt="Shaman" src={shaman}/>}
+const Warlock = {name: 'Warlock', img: <img alt="Warlock" src={warlock}/>}
+const Warrior = {name: 'Warrior', img: <img alt="Warrior" src={warrior}/>}
 
 export {Druid, Hunter, Mage, Priest, Rogue, Shaman, Warlock, Warrior}

@@ -5,7 +5,6 @@ import {
 import {Orc, Tauren, Troll, Undead} from "../img/races"
 import {Druid, Hunter, Mage, Priest, Rogue, Shaman, Warlock, Warrior} from "../img/classes"
 import {Balance, Feral, Bear, RestoDruid, Shadow, Elemental, Enhancement, RestoShaman, Tank} from "../img/specs"
-import Player from '../Player';
 
 const defaultString = "------"
 
@@ -34,7 +33,6 @@ const stateMap = {Orc: {race: Orc, class: defaultString, spec: defaultString},
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
-      href=""
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
@@ -113,10 +111,6 @@ function makeDropdown(thisObj, id, icon, items) {
             </Dropdown.Menu>
         </Dropdown>
     )
-}
-
-function makeDemographic() {
-
 }
 
 function raceDropDown(thisObj) {
