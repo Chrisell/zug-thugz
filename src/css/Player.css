@@ -1,0 +1,37 @@
+.login {
+    max-width: 30%;
+    margin: auto;
+}
+
+.general {
+    font-size: 3vw;
+    color: white;
+    margin-left: 2vw;
+}
+
+.note {
+    font-size: 2vw;
+    color: black;
+}
+
+/* Inactive tabs */
+.tabs a:defined {
+    background-color: grey;
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+}
+.tabs a:hover {
+    background-color: lightgrey;
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+}
+
+/* Active tab */
+.tabs a.active:defined {
+    background-color: white;
+    color: black;
+    font-size: 2vw;
+    text-align: center;
+}

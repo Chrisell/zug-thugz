@@ -3,13 +3,16 @@ import {
     Form,
     Button,
     Col,
-    Row
+    Row,
+    Tab,
+    Tabs
 } from 'react-bootstrap'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import BootstrapTable from 'react-bootstrap-table-next';
 import filterFactory from 'react-bootstrap-table2-filter'
+import {raceDropDown, classDropDown, specDropDown, rankDropDown} from "./utils/PlayerDropdowns"
 
-import './Player.css'
+import './css/Player.css'
 const postOptions = {
     method: 'post',
 };
@@ -22,9 +25,11 @@ function itemFormatter(cell, row) {
 }
 
 class Player extends React.Component {
+    // name, race, class, spec, rank.
     constructor(props) {
         super(props);
         this.state = {
+            name: "",
             authenticated: false,
             isLoading: false,
             options: [],
@@ -35,6 +40,65 @@ class Player extends React.Component {
         this.renderLoginForm = this.renderLoginForm.bind(this);
         this.fetchNeededItems = this.fetchNeededItems.bind(this);
     }
+
+    generalTab = () => {
+        return (
+            <Tab eventKey="general" title="general">
+                <div class="row">
+                    <label className="general">Race:</label>
+                    {raceDropDown(this)}
+                </div>
+                <div class="row">
+                    <p className="general">Class:</p>
+                    {classDropDown(this)}
+                </div>
+                <div class="row">
+                    <p className="general">Spec:</p>
+                    {specDropDown(this)}
+                </div>
+                <div class="row">
+                    <p className="general">Rank:</p>
+                    {rankDropDown(this)}
+                </div>
+                <div class="row">
+                    <p className="general">Note:<br></br><textarea wrap="hard" className="note" type="text" rows="3" cols="50" value={this.state.value}/></p>
+                </div>
+            </Tab>
+        )
+    }
+
+    wishListTab = (columns) => {
+        return (
+            <Tab eventKey="wish list" title="wish list">
+                <React.Fragment>
+                <Row className="justify-content-md-center">
+                    <Col lg="4">
+                        <AsyncTypeahead
+                            {...this.state}
+                            id="item-search"
+                            labelKey="name"
+                            class=""
+                            minLength={3}
+                            onChange={(i) => this.setState({ new_item: i })}
+                            onSearch={this._handleSearch}
+                            placeholder="Search for an item to add"
+                            renderMenuItemChildren={(option, props) => (
+                                <p>{option.name}</p>
+                            )}
+                        />
+                    </Col>
+                    <Col lg="1">
+                        <Button variant="dark" type="submit" onClick={this.addItemToNeedList}>
+                            Add Item
+                        </Button>    
+                    </Col>
+                </Row>
+                </React.Fragment>
+                <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.needed_items} columns={columns} filter={filterFactory()}></BootstrapTable>
+            </Tab>
+        )
+    }
+
     fetchNeededItems = (item_id) => {
         console.log('needed')
         fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/all_needs`, {
@@ -55,7 +119,7 @@ class Player extends React.Component {
             )
     }
     addItemToNeedList = () => {
-        const player_name = this.state.player
+        const player_name = this.state.name
         const new_item = this.state.new_item[0]
         console.log(new_item)
         fetch(`https://48ay6hn8rd.execute-api.us-east-1.amazonaws.com/test/graph/add_needed_item`, {
@@ -92,7 +156,7 @@ class Player extends React.Component {
                     this.setState({
                         authenticated: true,
                         needed_items: result,
-                        player: player_name,
+                        name: player_name,
                         options: []
                     })
                 },
@@ -157,35 +221,12 @@ class Player extends React.Component {
         ];
         return (
             <div>
-                <h1>{this.state.player}</h1>
-
-                <React.Fragment>
-                    <Row className="justify-content-md-center">
-                        <Col lg="4">
-                            <AsyncTypeahead
-                                {...this.state}
-                                id="item-search"
-                                labelKey="name"
-                                class=""
-                                minLength={3}
-                                onChange={(i) => this.setState({ new_item: i })}
-                                onSearch={this._handleSearch}
-                                placeholder="Search for an item to add"
-                                renderMenuItemChildren={(option, props) => (
-                                    <p>{option.name}</p>
-                                )}
-                            />
-                        </Col>
-                        <Col lg="1">
-                            <Button variant="dark" type="submit" onClick={this.addItemToNeedList}>
-                                Add Item
-                            </Button>    
-                        </Col>
-                    </Row>
-                </React.Fragment>
-                <BootstrapTable classes="table table-bordered table-dark" keyField='item_id' data={this.state.needed_items} columns={columns} filter={filterFactory()}></BootstrapTable> />
-
-            </div>            
+                <h1>{this.state.name}</h1>
+                <Tabs variant="pills" className="tabs" defaultActiveKey="general" transition={false} id="player-tabs">
+                    {this.generalTab()}
+                    {this.wishListTab(columns)}
+                </Tabs>
+            </div>
         )
     }
 
