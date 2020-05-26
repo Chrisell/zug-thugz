@@ -1,12 +1,4 @@
-import React, {useState} from 'react';
-import {
-    Form,
-    Button,
-    Col,
-    Row,
-    Tab,
-    Tabs
-} from 'react-bootstrap'
+import React from 'react';
 import filterFactory from 'react-bootstrap-table2-filter'
 import BootstrapTable from 'react-bootstrap-table-next';
 

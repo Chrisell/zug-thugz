@@ -33,6 +33,7 @@ const stateMap = {Orc: {race: Orc, class: defaultString, spec: defaultString},
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
+      href="/"
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
